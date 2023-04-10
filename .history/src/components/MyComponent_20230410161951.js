@@ -23,8 +23,7 @@ class MyComponent extends React.Component {
       name: e.target.value,
     });
   }
-  handleOnSubmit(e) {
-    e.preventDefault();
+  handleOnSubmit() {
     console.log(this.state);
   }
   //JSX
@@ -34,8 +33,8 @@ class MyComponent extends React.Component {
         My name is {this.state.name} and I'm from {this.state.address}. I'm{" "}
         {this.state.age} year olds
         <form
-          onSubmit={(e) => {
-            this.handleOnSubmit(e);
+          onSubmit={() => {
+            this.handleOnSubmit();
           }}
         >
           <input

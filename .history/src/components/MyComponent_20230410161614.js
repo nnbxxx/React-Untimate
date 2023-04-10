@@ -17,33 +17,14 @@ class MyComponent extends React.Component {
     // console.log(e);
     // console.log(e.pageX);
   }
-  handleOnChange(e) {
-    // console.log(e.target.value);
-    this.setState({
-      name: e.target.value,
-    });
-  }
-  handleOnSubmit(e) {
-    e.preventDefault();
-    console.log(this.state);
-  }
   //JSX
   render() {
     return (
       <div>
         My name is {this.state.name} and I'm from {this.state.address}. I'm{" "}
         {this.state.age} year olds
-        <form
-          onSubmit={(e) => {
-            this.handleOnSubmit(e);
-          }}
-        >
-          <input
-            type="text"
-            onChange={(e) => {
-              this.handleOnChange(e);
-            }}
-          ></input>
+        <form>
+          <input type="text"></input>
           <button>Submit</button>
         </form>
       </div>

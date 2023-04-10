@@ -18,14 +18,7 @@ class MyComponent extends React.Component {
     // console.log(e.pageX);
   }
   handleOnChange(e) {
-    // console.log(e.target.value);
-    this.setState({
-      name: e.target.value,
-    });
-  }
-  handleOnSubmit(e) {
-    e.preventDefault();
-    console.log(this.state);
+    this.state.name = e.target.value;
   }
   //JSX
   render() {
@@ -33,11 +26,7 @@ class MyComponent extends React.Component {
       <div>
         My name is {this.state.name} and I'm from {this.state.address}. I'm{" "}
         {this.state.age} year olds
-        <form
-          onSubmit={(e) => {
-            this.handleOnSubmit(e);
-          }}
-        >
+        <form>
           <input
             type="text"
             onChange={(e) => {

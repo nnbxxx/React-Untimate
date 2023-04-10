@@ -25,6 +25,7 @@ class MyComponent extends React.Component {
   }
   handleOnSubmit(e) {
     e.preventDefault();
+    e.clear();
     console.log(this.state);
   }
   //JSX
