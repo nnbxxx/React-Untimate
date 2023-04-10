@@ -17,10 +17,7 @@ const App = () => {
     //     <button onClick={() => dispatch(decreaseCounter())}>Decrease</button>
     //   </header>
     // </div>
-    <div>
-      Hello World nnb
-      <MyComponent></MyComponent>
-    </div>
+    <div>Hello World nnb</div>
   );
 };
 
