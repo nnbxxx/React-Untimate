@@ -18,7 +18,7 @@ class MyComponent extends React.Component {
     //DRY don't repeat yourself
     return (
       <div>
-        <AddUserInfo handleAddUserInfor={this.handleAddUserInfor} />
+        <AddUserInfo />
         <DisplayInfor listUsers={this.state.listUsers} />
       </div>
     );

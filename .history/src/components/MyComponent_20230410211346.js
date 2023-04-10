@@ -2,6 +2,7 @@ import React from "react";
 import AddUserInfo from "./AddUserInfor";
 import DisplayInfor from "./DisplayInfor";
 class MyComponent extends React.Component {
+
   state = {
     listUsers: [
       { id: 1, name: "Ngô Nguyên Bảo", age: "19" },
@@ -9,16 +10,14 @@ class MyComponent extends React.Component {
       { id: 3, name: "Từ Cảnh Minh", age: "69" },
     ],
   };
-  handleAddUserInfor = (obj) => {
-    this.setState({
-      listUsers: [obj, ...this.state.listUsers],
-    });
-  };
+  handleAddUserInfor(obj) =>{
+    return 0;
+  }
   render() {
     //DRY don't repeat yourself
     return (
       <div>
-        <AddUserInfo handleAddUserInfor={this.handleAddUserInfor} />
+        <AddUserInfo />
         <DisplayInfor listUsers={this.state.listUsers} />
       </div>
     );

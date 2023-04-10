@@ -10,15 +10,13 @@ class MyComponent extends React.Component {
     ],
   };
   handleAddUserInfor = (obj) => {
-    this.setState({
-      listUsers: [obj, ...this.state.listUsers],
-    });
+    return 0;
   };
   render() {
     //DRY don't repeat yourself
     return (
       <div>
-        <AddUserInfo handleAddUserInfor={this.handleAddUserInfor} />
+        <AddUserInfo />
         <DisplayInfor listUsers={this.state.listUsers} />
       </div>
     );

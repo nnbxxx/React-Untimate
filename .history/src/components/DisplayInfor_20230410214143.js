@@ -1,5 +1,5 @@
 import React from "react";
-import "./DisplayInfor.scss";
+import "./AddUserInfor.scss";
 
 class DisplayInfor extends React.Component {
   state = {
@@ -22,7 +22,7 @@ class DisplayInfor extends React.Component {
             : "Show list users"}
         </div>
         {this.state.isShowListUser && (
-          <div className="display-infor-container">
+          <div>
             {listUsers.map((item) => {
               return (
                 <div key={item.id} className={+item.age > 18 ? "green" : "red"}>
