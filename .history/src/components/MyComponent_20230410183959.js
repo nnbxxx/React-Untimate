@@ -6,9 +6,7 @@ class MyComponent extends React.Component {
     return (
       <div>
         <UserInfo />
-        <DisplayInfor name="Ngô Nguyên Bảo" age={20} />
-        <br></br>
-        <DisplayInfor name="Lâm Thị Lan Anh" age={20} />
+        <DisplayInfor />
       </div>
     );
   }
