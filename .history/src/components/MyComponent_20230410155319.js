@@ -7,7 +7,6 @@ class MyComponent extends React.Component {
   };
   handleClick(e) {
     console.log(e);
-    console.log(`My name is ${this.state.name}`);
   }
   handleOnMouseOver(e) {
     console.log(e);

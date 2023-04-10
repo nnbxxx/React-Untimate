@@ -5,13 +5,8 @@ class MyComponent extends React.Component {
     address: "HCM",
     age: 20,
   };
-  handleClick(e) {
-    console.log(e);
-    console.log(`My name is ${this.state.name}`);
-  }
-  handleOnMouseOver(e) {
-    console.log(e);
-    console.log(e.pageX);
+  handleClick() {
+    console.log("hello");
   }
   //JSX
   render() {
@@ -19,8 +14,7 @@ class MyComponent extends React.Component {
       <div>
         My name is {this.state.name} and I'm from {this.state.address}. I'm{" "}
         {this.state.age} year olds
-        <button onClick={this.handleClick}>Click Me</button>
-        <button onMouseOver={this.handleOnMouseOver}>Hover Me</button>
+        <button onClick={handleClick}>Click Me</button>
       </div>
     );
   }
