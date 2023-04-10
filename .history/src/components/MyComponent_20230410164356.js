@@ -5,7 +5,7 @@ class MyComponent extends React.Component {
   render() {
     return (
       <div>
-        <UserInfo />
+        <UserInfo></UserInfo>
       </div>
     );
   }
