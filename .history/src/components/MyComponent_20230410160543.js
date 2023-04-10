@@ -10,7 +10,6 @@ class MyComponent extends React.Component {
     console.log(`My name is ${this.state.name}`);
     this.setState({
       name: "ngo nguyen bao",
-      age: Math.floor(Math.random() * 100) + 1,
     });
   };
   handleOnMouseOver(e) {

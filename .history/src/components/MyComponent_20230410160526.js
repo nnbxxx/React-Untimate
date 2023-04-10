@@ -8,10 +8,6 @@ class MyComponent extends React.Component {
   handleClick = (e) => {
     console.log(e);
     console.log(`My name is ${this.state.name}`);
-    this.setState({
-      name: "ngo nguyen bao",
-      age: Math.floor(Math.random() * 100) + 1,
-    });
   };
   handleOnMouseOver(e) {
     // console.log(e);
