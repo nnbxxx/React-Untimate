@@ -14,20 +14,12 @@ class MyComponent extends React.Component {
       listUsers: [obj, ...this.state.listUsers],
     });
   };
-  handleRemoveUserInfor = (idObj) => {
-    this.setState({
-      listUsers: [...this.state.listUsers].filter((item) => item.id !== idObj),
-    });
-  };
   render() {
     //DRY don't repeat yourself
     return (
       <>
         <AddUserInfo handleAddUserInfor={this.handleAddUserInfor} />
-        <DisplayInfor
-          listUsers={this.state.listUsers}
-          handleRemoveUserInfor={this.handleRemoveUserInfor}
-        />
+        <DisplayInfor listUsers={this.state.listUsers} />
       </>
     );
   }

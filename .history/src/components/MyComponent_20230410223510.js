@@ -23,11 +23,11 @@ class MyComponent extends React.Component {
     //DRY don't repeat yourself
     return (
       <>
-        <AddUserInfo handleAddUserInfor={this.handleAddUserInfor} />
-        <DisplayInfor
-          listUsers={this.state.listUsers}
+        <AddUserInfo
+          handleAddUserInfor={this.handleAddUserInfor}
           handleRemoveUserInfor={this.handleRemoveUserInfor}
         />
+        <DisplayInfor listUsers={this.state.listUsers} />
       </>
     );
   }
