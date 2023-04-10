@@ -7,9 +7,9 @@ class DisplayInfor extends React.Component {
       <div>
         {listUsers.map((item) => {
           return (
-            <div key={item.id}>
+            <div>
               <div>My name's {item.name}</div>
-              <div>My age's {item.age}</div>
+              <div>My age's {item.name}</div>
               <hr></hr>
             </div>
           );

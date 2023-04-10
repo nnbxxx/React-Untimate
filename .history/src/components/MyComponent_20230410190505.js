@@ -14,7 +14,9 @@ class MyComponent extends React.Component {
     return (
       <div>
         <UserInfo />
-        <DisplayInfor listUsers={this.state.listUsers} />
+        <DisplayInfor name="Ngô Nguyên Bảo" age={20} />
+        <br></br>
+        <DisplayInfor name="Lâm Thị Lan Anh" age={20} />
       </div>
     );
   }
