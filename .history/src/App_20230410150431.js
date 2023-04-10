@@ -7,12 +7,10 @@ import React from "react";
 
 class App extends React.Component {
   render() {
-    return (
-      <div>
-        Hello World nnb
-        <MyComponent></MyComponent>
-      </div>
-    );
+    <div>
+      Hello World nnb
+      <MyComponent></MyComponent>
+    </div>;
   }
 }
 

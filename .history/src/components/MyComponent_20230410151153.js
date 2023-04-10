@@ -1,7 +1,7 @@
 import React from "react";
 class MyComponent extends React.Component {
   state = {
-    name: "nnbx03",
+    name: "Ngo Nguyen Bao",
     address: "HCM",
     age: 20,
   };
@@ -9,8 +9,8 @@ class MyComponent extends React.Component {
   render() {
     return (
       <div>
-        My name is {this.state.name} and I'm from {this.state.address}. I'm{" "}
-        {this.state.age} year olds
+        My first component
+        {Math.random()}
       </div>
     );
   }
