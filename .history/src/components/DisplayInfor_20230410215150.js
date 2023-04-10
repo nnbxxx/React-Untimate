@@ -12,6 +12,7 @@ class DisplayInfor extends React.Component {
     const { listUsers } = this.props;
     return (
       <div>
+        <img src={logo} />
         <div
           onClick={() => {
             this.handleHideShow();
@@ -23,7 +24,6 @@ class DisplayInfor extends React.Component {
         </div>
         {this.state.isShowListUser && (
           <div className="display-infor-container">
-            <img src={logo} />
             {listUsers.map((item) => {
               return (
                 <div key={item.id} className={+item.age > 18 ? "green" : "red"}>
