@@ -31,32 +31,5 @@ import logo from "./../logo.svg";
 //     );
 //   }
 // }
-const DisplayInfor = (props) => {
-  const { listUsers } = props;
-  return (
-    <div className='display-infor-container'>
-      {true && (
-        <>
-          {listUsers.map((item) => {
-            return (
-              <div key={item.id} className={+item.age > 18 ? "green" : "red"}>
-                <div>My name's {item.name}</div>
-                <div>My age's {item.age}</div>
-                <button
-                  onClick={() => {
-                    props.handleRemoveUserInfor(item.id);
-                  }}
-                >
-                  {" "}
-                  Delete
-                </button>
-                <hr></hr>
-              </div>
-            );
-          })}
-        </>
-      )}
-    </div>
-  );
-};
+const DisplayInfor = (props) => {};
 export default DisplayInfor;

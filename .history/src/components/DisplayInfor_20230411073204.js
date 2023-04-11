@@ -33,6 +33,7 @@ import logo from "./../logo.svg";
 // }
 const DisplayInfor = (props) => {
   const { listUsers } = props;
+
   return (
     <div className='display-infor-container'>
       {true && (
