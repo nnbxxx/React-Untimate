@@ -41,7 +41,7 @@ function DisplayInfor(props) {
     if (listUsers.length === 0) {
       setTimeout(() => {
         alert("You deleted all user");
-      }, 500);
+      }, 2000);
     }
   }, [listUsers]);
   return (

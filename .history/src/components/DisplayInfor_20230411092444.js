@@ -38,12 +38,8 @@ function DisplayInfor(props) {
     setIsShowListUser(!isShowListUser);
   };
   useEffect(() => {
-    if (listUsers.length === 0) {
-      setTimeout(() => {
-        alert("You deleted all user");
-      }, 500);
-    }
-  }, [listUsers]);
+    alert("You deleted all user");
+  }, []);
   return (
     <div className='display-infor-container'>
       <div>

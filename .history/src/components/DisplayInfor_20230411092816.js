@@ -39,9 +39,7 @@ function DisplayInfor(props) {
   };
   useEffect(() => {
     if (listUsers.length === 0) {
-      setTimeout(() => {
-        alert("You deleted all user");
-      }, 500);
+      setTimeout(() => {}, 2000);
     }
   }, [listUsers]);
   return (
