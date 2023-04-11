@@ -13,9 +13,7 @@ const App = () => {
           <Button>
             <Link to='./users'>Go to user page</Link>
           </Button>
-          <Button>
-            <Link to='./admins'>Go to admin page</Link>
-          </Button>
+          <Link to='./admins'>Go to admin page</Link>
         </div>
       </div>
     </div>

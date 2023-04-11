@@ -10,12 +10,8 @@ const App = () => {
       <div>
         test Link
         <div>
-          <Button>
-            <Link to='./users'>Go to user page</Link>
-          </Button>
-          <Button>
-            <Link to='./admins'>Go to admin page</Link>
-          </Button>
+          <Button className='btn btn-primary'>Go to user page</Button>
+          <Button className='btn btn-primary'>Go to admin page</Button>
         </div>
       </div>
     </div>

@@ -10,11 +10,9 @@ const App = () => {
       <div>
         test Link
         <div>
-          <Button>
+          <Button className='btn btn-primary'></Button>
+          <Button className='btn btn-primary'>
             <Link to='./users'>Go to user page</Link>
-          </Button>
-          <Button>
-            <Link to='./admins'>Go to admin page</Link>
           </Button>
         </div>
       </div>

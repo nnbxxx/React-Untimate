@@ -11,9 +11,6 @@ const App = () => {
         test Link
         <div>
           <Button>
-            <Link to='./users'>Go to user page</Link>
-          </Button>
-          <Button>
             <Link to='./admins'>Go to admin page</Link>
           </Button>
         </div>

@@ -21,8 +21,8 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<App />} />
-        <Route path='users' element={<User />} />
-        <Route path='admins' element={<Admin />} />
+        <Route path='Users' element={<User />} />
+        <Route path='Admins' element={<Admin />} />
       </Routes>
     </BrowserRouter>
 
