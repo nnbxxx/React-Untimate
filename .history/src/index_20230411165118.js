@@ -24,6 +24,8 @@ root.render(
           <Route path='users' element={<User />} />
           <Route path='admins' element={<Admin />} />
         </Route>
+
+        <Route />
       </Routes>
     </BrowserRouter>
 

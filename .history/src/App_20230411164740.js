@@ -1,7 +1,7 @@
 import { Button } from "react-bootstrap";
 import "./App.scss";
 import Header from "./components/Header/Header";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const App = () => {
   return (
@@ -12,8 +12,17 @@ const App = () => {
       <div className='main-container'>
         <div className='sidenav-container'></div>
       </div>
-      <div className='app-content'>
-        <Outlet />
+      <div className='app-content'></div>
+      <div>
+        test Link
+        <div>
+          <Button>
+            <Link to='./users'>Go to user page</Link>
+          </Button>
+          <Button>
+            <Link to='./admins'>Go to admin page</Link>
+          </Button>
+        </div>
       </div>
     </div>
   );
