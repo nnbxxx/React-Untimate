@@ -9,10 +9,12 @@ const MyComponent = () => {
     { id: 3, name: "Từ Cảnh Minh", age: "69" },
   ]);
   const handleAddUserInfor = (obj) => {
-    setListUsers([obj, ...listUsers]);
+    setListUsers([obj, ...this.state.listUsers]);
   };
   const handleRemoveUserInfor = (idObj) => {
-    setListUsers([...listUsers].filter((item) => item.id !== idObj));
+    this.setState({
+      listUsers: [...listUsers].filter((item) => item.id !== idObj),
+    });
   };
 
   return (

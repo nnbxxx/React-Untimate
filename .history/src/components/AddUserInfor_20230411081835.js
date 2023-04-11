@@ -1,52 +1,52 @@
 import React from "react";
-class AddUserInfo extends React.Component {
+const AddUserInfo = (props)=> {
   state = {
     name: "",
     address: "",
     age: 0,
   };
-  handleOnChange(e) {
-    this.setState({
+  const handleOnChange=(e)  () => {
+    setState({
       name: e.target.value,
     });
   }
-  handleOnAge(e) {
-    this.setState({
+  const handleOnAge=(e)  ()=> {
+    setState({
       age: e.target.value,
     });
   }
-  handleOnSubmit(e) {
+  const handleOnSubmit=(e)  ()=> {
     e.preventDefault();
     // thêm vào state obj
 
-    this.props.handleAddUserInfor({
-      id: Math.floor(Math.random() * 10000 + 1) + "-random",
-      name: this.state.name,
-      age: this.state.age,
+    props.handleAddUserInfor({
+      id: Math.floor(Math.random() * 1000 + 1) + "-random",
+      name: state.name,
+      age: state.age,
     });
   }
   render() {
     return (
       <div>
-        My name is {this.state.name} and I'm from {this.state.address}. I'm{" "}
-        {this.state.age} year olds
+        My name is {state.name} and I'm from {state.address}. I'm{" "}
+        {state.age} year olds
         <form
           onSubmit={(e) => {
-            this.handleOnSubmit(e);
+            handleOnSubmit(e);
           }}
         >
           <input
-            value={this.state.name}
+            value={state.name}
             type='text'
             onChange={(e) => {
-              this.handleOnChange(e);
+              handleOnChange(e);
             }}
           ></input>
           <input
-            value={this.state.age}
+            value={state.age}
             type='text'
             onChange={(e) => {
-              this.handleOnAge(e);
+              handleOnAge(e);
             }}
           ></input>
           <button>Submit</button>

@@ -20,7 +20,7 @@ class AddUserInfo extends React.Component {
     // thêm vào state obj
 
     this.props.handleAddUserInfor({
-      id: Math.floor(Math.random() * 10000 + 1) + "-random",
+      id: Math.floor(Math.random() * 1000 + 1) + "-random",
       name: this.state.name,
       age: this.state.age,
     });
