@@ -1,0 +1,40 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.app-container {
+  .header-container {
+    .btn-login {
+      border-radius: 4px;
+      color: #262627;
+      font-family: apercu-pro;
+      justify-content: center;
+      line-height: 24px;
+      margin: 0px 16px 0px 0px;
+      padding: 8px 16px;
+      text-align: center;
+    }
+    .btn-signup {
+    }
+    .navbar {
+      z-index: 10;
+      // opacity: 0.6;
+      background-color: rgba(0, 0, 0, 0) !important;
+      .nav-link {
+        &.active {
+          color: #00bfff;
+        }
+      }
+    }
+  }
+}
+video {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+}

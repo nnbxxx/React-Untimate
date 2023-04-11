@@ -30,7 +30,7 @@ const Header = () => {
               <NavDropdown.Item>Log in</NavDropdown.Item>
               <NavDropdown.Item>Log out</NavDropdown.Item>
               <NavDropdown.Item>Profile</NavDropdown.Item>
-              
+              {/* <NavDropdown.Divider /> */}
             </NavDropdown> */}
           </Nav>
         </Navbar.Collapse>

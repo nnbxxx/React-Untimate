@@ -7,8 +7,8 @@ import store from "./redux/store";
 import "bootstrap/dist/css/bootstrap.min.css";
 import User from "./components/User/User";
 import Admin from "./components/Admin/Admin";
-import HomePage from "./components/Home/HomePage";
 import {
+import HomePage from './components/Home/HomePage';
   createBrowserRouter,
   RouterProvider,
   BrowserRouter,

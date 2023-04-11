@@ -3,6 +3,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { NavLink } from "react-router-dom";
+
 const Header = () => {
   return (
     <Navbar bg='light' expand='lg'>
@@ -24,14 +25,12 @@ const Header = () => {
             </NavLink>
           </Nav>
           <Nav>
-            <button className='btn-login'>Log In</button>
-            <button className='btn-signup'>Sign Up</button>
-            {/* <NavDropdown title='Setting' id='basic-nav-dropdown'>
-              <NavDropdown.Item>Log in</NavDropdown.Item>
-              <NavDropdown.Item>Log out</NavDropdown.Item>
-              <NavDropdown.Item>Profile</NavDropdown.Item>
-              
-            </NavDropdown> */}
+            <NavDropdown title='Setting' id='basic-nav-dropdown'>
+              <NavDropdown.Item href='#action/3.1'>Log in</NavDropdown.Item>
+              <NavDropdown.Item href='#action/3.2'>Log out</NavDropdown.Item>
+              <NavDropdown.Item href='#action/3.3'>Profile</NavDropdown.Item>
+              <NavDropdown.Divider />
+            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -1,0 +1,30 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.app-container {
+  .header-container {
+    .navbar {
+      z-index: 100;
+      opacity: 0.6;
+      .navbar-nav {
+        .nav-link {
+          &.active {
+            color: #00bfff;
+          }
+        }
+      }
+    }
+  }
+}
+video {
+  margin-top: 200px;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+}

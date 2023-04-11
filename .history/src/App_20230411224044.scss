@@ -47,7 +47,7 @@ body {
     }
   }
   .homepage-content {
-    margin-top: 40px;
+    margin-top: 100px;
     padding: 0 100px;
     position: relative;
     width: 50%;
@@ -57,28 +57,23 @@ body {
     gap: 20px;
     .title-1 {
       color: #262627;
-      font-size: 60px;
+      font-size: 64px;
       font-weight: 300;
       line-height: 76.8px;
       margin: 0px 0px 24px;
     }
     .title-2 {
-      color: #262627;
-      font-size: 20px;
-      font-weight: 300;
-      line-height: 31.2px;
-      margin: 0px 0px 40px;
     }
-    .btn-3 {
+    .title-3 {
       background-color: #262627;
       border-radius: 4px;
       color: #fcfaf8;
       display: inline-block;
+      font-family: apercu-pro;
       justify-content: center;
       line-height: 24px;
-      padding: 10px 20px;
+      padding: 12px 24px;
       text-align: center;
-      width: 200px;
 
       &:hover {
         // opacity: 0.9;
