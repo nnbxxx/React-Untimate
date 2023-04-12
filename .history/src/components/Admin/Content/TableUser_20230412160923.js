@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAllUsers } from "../../../services/apiService";
 const TableUser = (props) => {
-  const { listUser } = props;
+  const { listUser, handleClickBtnUpdate } = props;
 
   return (
     <>
@@ -30,7 +30,6 @@ const TableUser = (props) => {
                     <button
                       className='btn btn-warning mx-3'
                       onClick={() => {
-                        props.handleClickBtnUpdate(item);
                       }}
                     >
                       Update

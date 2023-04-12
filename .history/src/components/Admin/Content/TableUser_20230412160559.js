@@ -29,9 +29,9 @@ const TableUser = (props) => {
                     <button className='btn btn-secondary'>View</button>
                     <button
                       className='btn btn-warning mx-3'
-                      onClick={() => {
-                        props.handleClickBtnUpdate(item);
-                      }}
+                      onClick={(e) => 
+                        props.handleClickBtnUpdate();
+                      }
                     >
                       Update
                     </button>
