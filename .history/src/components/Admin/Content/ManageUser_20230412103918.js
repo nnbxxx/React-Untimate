@@ -10,21 +10,14 @@ const ManageUser = (props) => {
       <div className='title'>Manager Users</div>
       <div className='manage-user-content'>
         <div className='btn-add-new '>
-          <button
-            className='btn btn-primary'
-            onClick={(e) => {
-              setShowModalAddUser(true);
-            }}
-          >
+          <button className='btn btn-primary'>
             <FcPlus />
             Add new user
           </button>
         </div>
+
         <div className='table-user-container'>Table users</div>
-        <ModalCreateUser
-          show={showModalAddUser}
-          setShow={setShowModalAddUser}
-        />
+        <ModalCreateUser showModalAddUser={showModalAddUser} />
       </div>
     </div>
   );

@@ -39,11 +39,6 @@ const ModalCreateUser = (props) => {
       "🚀 ~ file: ModalCreateUser.js:30 ~ handleSubmitCreateUser ~ res:",
       res
     );
-    setEmail("");
-    setPassword("");
-    setImage("");
-    setRole("USER");
-    setPreviewImage("");
   };
 
   const handleUpLoadFile = (e) => {

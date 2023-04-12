@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { FcPlus } from "react-icons/fc";
-import axios from "axios";
 const ModalCreateUser = (props) => {
   const { show } = props;
   const [email, setEmail] = useState("");
@@ -12,38 +11,18 @@ const ModalCreateUser = (props) => {
   const [role, setRole] = useState("USER");
   const [previewImage, setPreviewImage] = useState("");
 
-  const handleClose = () => {
-    props.setShow(false);
-    setEmail("");
-    setPassword("");
-    setImage("");
-    setRole("USER");
-    setPreviewImage("");
-  };
-  const handleSubmitCreateUser = async () => {
+  const handleClose = () => props.setShow(false);
+  const handleSubmitCreateUser = () => {
     //validate
 
-    //call api
-    const data = new FormData();
-    data.append("email", email);
-    data.append("password", password);
-    data.append("username", username);
-    data.append("role", role);
-    data.append("userImage", image);
-
-    let res = await axios.post(
-      "http://localhost:8081/api/v1/participant",
-      data
-    );
-    console.log(
-      "🚀 ~ file: ModalCreateUser.js:30 ~ handleSubmitCreateUser ~ res:",
-      res
-    );
-    setEmail("");
-    setPassword("");
-    setImage("");
-    setRole("USER");
-    setPreviewImage("");
+    //callapis
+    let data = {
+      email: "",
+      password: "",
+      username: "",
+      role: "",
+      userImage: "",
+    };
   };
 
   const handleUpLoadFile = (e) => {

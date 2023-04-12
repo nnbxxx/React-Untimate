@@ -14,11 +14,6 @@ const ModalCreateUser = (props) => {
 
   const handleClose = () => {
     props.setShow(false);
-    setEmail("");
-    setPassword("");
-    setImage("");
-    setRole("USER");
-    setPreviewImage("");
   };
   const handleSubmitCreateUser = async () => {
     //validate
@@ -39,11 +34,6 @@ const ModalCreateUser = (props) => {
       "🚀 ~ file: ModalCreateUser.js:30 ~ handleSubmitCreateUser ~ res:",
       res
     );
-    setEmail("");
-    setPassword("");
-    setImage("");
-    setRole("USER");
-    setPreviewImage("");
   };
 
   const handleUpLoadFile = (e) => {

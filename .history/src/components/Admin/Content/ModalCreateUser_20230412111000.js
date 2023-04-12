@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { FcPlus } from "react-icons/fc";
-import axios from "axios";
 const ModalCreateUser = (props) => {
   const { show } = props;
   const [email, setEmail] = useState("");
@@ -12,14 +11,7 @@ const ModalCreateUser = (props) => {
   const [role, setRole] = useState("USER");
   const [previewImage, setPreviewImage] = useState("");
 
-  const handleClose = () => {
-    props.setShow(false);
-    setEmail("");
-    setPassword("");
-    setImage("");
-    setRole("USER");
-    setPreviewImage("");
-  };
+  const handleClose = () => props.setShow(false);
   const handleSubmitCreateUser = async () => {
     //validate
 
@@ -35,15 +27,6 @@ const ModalCreateUser = (props) => {
       "http://localhost:8081/api/v1/participant",
       data
     );
-    console.log(
-      "🚀 ~ file: ModalCreateUser.js:30 ~ handleSubmitCreateUser ~ res:",
-      res
-    );
-    setEmail("");
-    setPassword("");
-    setImage("");
-    setRole("USER");
-    setPreviewImage("");
   };
 
   const handleUpLoadFile = (e) => {
