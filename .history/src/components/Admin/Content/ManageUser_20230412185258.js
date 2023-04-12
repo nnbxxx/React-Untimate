@@ -14,7 +14,7 @@ const ManageUser = (props) => {
   const [showModalDeleteUser, setShowModalDeleteUser] = useState(false);
   const [listUser, setListUser] = useState([]);
   const [userUpdate, setUserUpdate] = useState({});
-  const [userDelete, setUserDelete] = useState({});
+  const [userDelte, setUserDelte] = useState({});
   const [userView, setUserView] = useState({});
   const handleClickBtnUpdate = (user) => {
     setShowModalUpdateUser(true);
@@ -26,7 +26,7 @@ const ManageUser = (props) => {
   };
   const handleClickBtnDelete = (user) => {
     setShowModalDeleteUser(true);
-    setUserDelete(user);
+    setUserDelte(user);
   };
   useEffect(() => {
     fetchListUser();
@@ -79,8 +79,7 @@ const ManageUser = (props) => {
         <ModalDeleteUser
           show={showModalDeleteUser}
           setShow={setShowModalDeleteUser}
-          userDelete={userDelete}
-          fetchListUser={fetchListUser}
+          userDelte={userDelete}
         />
       </div>
     </div>
