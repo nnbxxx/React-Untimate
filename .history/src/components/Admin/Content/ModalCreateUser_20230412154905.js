@@ -5,7 +5,7 @@ import { FcPlus } from "react-icons/fc";
 import { toast } from "react-toastify";
 import { postCreateNewUser } from "../../../services/apiService";
 const ModalCreateUser = (props) => {
-  const { show, fetchListUser } = props;
+  const { show } = props;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -43,7 +43,7 @@ const ModalCreateUser = (props) => {
     let data = await postCreateNewUser(email, username, password, role, image);
     if (data && data.EC === 0) {
       toast.success(data.EM);
-      await fetchListUser();
+
       handleClose();
     }
     if (data && data.EC !== 0) {

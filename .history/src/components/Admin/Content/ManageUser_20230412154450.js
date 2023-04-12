@@ -30,12 +30,11 @@ const ManageUser = (props) => {
           </button>
         </div>
         <div className='table-user-container'>
-          <TableUser listUser={listUser} />
+          <TableUser />
         </div>
         <ModalCreateUser
           show={showModalAddUser}
           setShow={setShowModalAddUser}
-          fetchListUser={fetchListUser}
         />
       </div>
     </div>

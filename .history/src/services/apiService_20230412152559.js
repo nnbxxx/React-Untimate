@@ -13,4 +13,4 @@ const getAllUsers = () => {
   return axios.get("v1/participant/all");
   //
 };
-export { postCreateNewUser, getAllUsers };
+export { postCreateNewUser };

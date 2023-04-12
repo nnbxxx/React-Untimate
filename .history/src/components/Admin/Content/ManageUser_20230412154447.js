@@ -1,6 +1,7 @@
 import ModalCreateUser from "./ModalCreateUser";
 import "./ManageUser.scss";
 import { FcPlus } from "react-icons/fc";
+import { useState } from "react";
 import TableUser from "./TableUser";
 import { useEffect, useState } from "react";
 import { getAllUsers } from "../../../services/apiService";
@@ -30,12 +31,11 @@ const ManageUser = (props) => {
           </button>
         </div>
         <div className='table-user-container'>
-          <TableUser listUser={listUser} />
+          <TableUser />
         </div>
         <ModalCreateUser
           show={showModalAddUser}
           setShow={setShowModalAddUser}
-          fetchListUser={fetchListUser}
         />
       </div>
     </div>
