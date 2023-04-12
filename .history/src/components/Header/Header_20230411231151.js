@@ -8,7 +8,7 @@ const Header = () => {
     <Navbar bg='light' expand='lg'>
       <Container>
         <NavLink to='/' className='navbar-brand'>
-          Webdevstudios
+          adventure.webdevstudios
         </NavLink>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>

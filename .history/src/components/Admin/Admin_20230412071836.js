@@ -7,7 +7,7 @@ const Admin = (props) => {
   return (
     <div className='admin-container'>
       <div className='admin-sidebar'>
-        <SideBar collapsed={collapsed} />
+        <SideBar />
       </div>
       <div className='admin-content'>
         <FaBars
