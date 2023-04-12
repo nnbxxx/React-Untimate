@@ -3,9 +3,7 @@ import "./Login.scss";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { postLogin } from "../../services/apiService";
-import { toast } from "react-toastify";
-
-const Login = (props) => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -16,10 +14,13 @@ const Login = (props) => {
     let data = await postLogin(email, password);
     if (data && data.EC === 0) {
       toast.success(data.EM);
-      navigate("/");
+      props.setCurrentPage(1);
+      await props.fetchListUserWithPaginate(1);
+      handleClose();
     }
     if (data && data.EC !== 0) {
       toast.error(data.EM);
+      handleClose();
     }
   };
   return (

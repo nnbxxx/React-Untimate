@@ -16,10 +16,13 @@ const Login = (props) => {
     let data = await postLogin(email, password);
     if (data && data.EC === 0) {
       toast.success(data.EM);
-      navigate("/");
+      props.setCurrentPage(1);
+      await props.fetchListUserWithPaginate(1);
+      handleClose();
     }
     if (data && data.EC !== 0) {
       toast.error(data.EM);
+      handleClose();
     }
   };
   return (

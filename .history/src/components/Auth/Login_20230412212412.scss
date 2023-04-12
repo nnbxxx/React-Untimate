@@ -6,6 +6,7 @@
     color: #4c4c4c;
     justify-content: flex-end;
     padding: 8px 24px;
+    border: 1px solid red;
     .text {
       color: #4c4c4c;
       font-size: 14px;
@@ -18,11 +19,6 @@
       font-size: 12px;
       line-height: 14px;
       padding: 8px 12px 6px;
-      border: 1px solid currentcolor;
-      margin-left: 5px;
-      &:hover {
-        background-color: #f9f9f9;
-      }
     }
   }
   .title {
@@ -41,9 +37,6 @@
     justify-content: center;
     flex-direction: column;
     gap: 15px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    padding: 25px;
-    border-radius: 10px;
     .forgot-password {
       color: #777777;
       display: inline;
@@ -62,12 +55,6 @@
       line-height: 28px;
       text-align: center;
       outline: none;
-    }
-    .back {
-      cursor: pointer;
-      &:hover {
-        border: 1px solid #ccc;
-      }
     }
   }
 }
