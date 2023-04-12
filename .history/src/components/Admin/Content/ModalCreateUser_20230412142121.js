@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { FcPlus } from "react-icons/fc";
 import { toast } from "react-toastify";
-import { postCreateNewUser } from "../../../services/apiService";
+import {postCreateNewUser} from "../../../services/apiService"
 const ModalCreateUser = (props) => {
   const { show } = props;
   const [email, setEmail] = useState("");
@@ -39,14 +39,20 @@ const ModalCreateUser = (props) => {
       toast.error("Invalid Password");
     }
     //call api
+    const data = new FormData();
+    data.append("email", email);
+    data.append("password", password);
+    data.append("username", username);
+    data.append("role", role);
+    data.append("userImage", image);
 
-    let data = await postCreateNewUser(email, username, password, role, image);
-    if (data && data.EC === 0) {
-      toast.success(data.EM);
+    let res = await 
+    if (res.data && res.data.EC === 0) {
+      toast.success(res.data.EM);
       handleClose();
     }
-    if (data && data.EC !== 0) {
-      toast.error(data.EM);
+    if (res.data && res.data.EC !== 0) {
+      toast.console.error(res.data.EM);
       handleClose();
     }
   };

@@ -46,7 +46,7 @@ const ModalCreateUser = (props) => {
       handleClose();
     }
     if (data && data.EC !== 0) {
-      toast.error(data.EM);
+      toast.console.error(data.EM);
       handleClose();
     }
   };

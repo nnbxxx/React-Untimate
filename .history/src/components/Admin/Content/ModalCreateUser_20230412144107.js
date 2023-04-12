@@ -33,11 +33,11 @@ const ModalCreateUser = (props) => {
   const handleSubmitCreateUser = async () => {
     //validate
     const isValidEmail = validateEmail(email);
-    if (!isValidEmail) {
-      toast.error("Invalid Email");
-    } else if (!password) {
-      toast.error("Invalid Password");
-    }
+    // if (!isValidEmail) {
+    //   toast.error("Invalid Email");
+    // } else if (!password) {
+    //   toast.error("Invalid Password");
+    // }
     //call api
 
     let data = await postCreateNewUser(email, username, password, role, image);
@@ -46,7 +46,7 @@ const ModalCreateUser = (props) => {
       handleClose();
     }
     if (data && data.EC !== 0) {
-      toast.error(data.EM);
+      toast.console.error(data.EM);
       handleClose();
     }
   };
