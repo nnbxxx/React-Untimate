@@ -15,10 +15,7 @@ const ModalCreateUser = () => {
   const handleShow = () => setShow(true);
 
   const handleUpLoadFile = (e) => {
-    if (e.target && e.target.files && e.target.files[0]) {
-      setPreviewImage(URL.createObjectURL(e.target.files[0]));
-      setImage(URL.createObjectURL(e.target.files[0]));
-    }
+    setPreviewImage(URL.createObjectURL(e.target.files[0]));
   };
   return (
     <>
@@ -101,11 +98,8 @@ const ModalCreateUser = () => {
               />
             </div>
             <div className='col-md-12 img-preview'>
-              {previewImage ? (
-                <img src={previewImage} />
-              ) : (
-                <span>Preview Image</span>
-              )}
+              <img src='https://images.unsplash.com/photo-1680786671088-8eeb95f16a21?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80' />
+              {/* <span>Preview Image</span> */}
             </div>
           </form>
         </Modal.Body>

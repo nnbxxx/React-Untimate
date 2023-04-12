@@ -17,7 +17,6 @@ const ModalCreateUser = () => {
   const handleUpLoadFile = (e) => {
     if (e.target && e.target.files && e.target.files[0]) {
       setPreviewImage(URL.createObjectURL(e.target.files[0]));
-      setImage(URL.createObjectURL(e.target.files[0]));
     }
   };
   return (
