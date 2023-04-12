@@ -20,7 +20,6 @@ const ManageUser = (props) => {
   const [listUser, setListUser] = useState([]);
   const [userUpdate, setUserUpdate] = useState({});
   const [userDelete, setUserDelete] = useState({});
-  const [pageCount, setPageCount] = useState(0);
   const [userView, setUserView] = useState({});
   const handleClickBtnUpdate = (user) => {
     setShowModalUpdateUser(true);
@@ -45,7 +44,6 @@ const ManageUser = (props) => {
   const fetchListUserWithPaginate = async (page) => {
     let res = await getUsersWithPaginate(page, LIMIT_USER);
     res.EC === 0 && setListUser(res.DT.users);
-    res.EC === 0 && setPageCount(res.DT.totalPages);
   };
   return (
     <div className='manage-user-container'>
@@ -75,7 +73,6 @@ const ManageUser = (props) => {
             handleClickBtnView={handleClickBtnView}
             handleClickBtnDelete={handleClickBtnDelete}
             fetchListUserWithPaginate={fetchListUserWithPaginate}
-            pageCount={pageCount}
           />
         </div>
         <ModalCreateUser

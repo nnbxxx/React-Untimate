@@ -25,14 +25,8 @@ const deleteUser = (idUser) => {
   return axios.delete("v1/participant", { data: { id: idUser } });
   //
 };
-const getUsersWithPaginate = (page, limit) => {
-  return axios.get(`v1/participant?page=${page}&limit=${limit}`);
+const getUsersWithPaginate = (idUser) => {
+  return axios.delete("v1/participant", { data: { id: idUser } });
   //
 };
-export {
-  postCreateNewUser,
-  getAllUsers,
-  putUpdateUser,
-  deleteUser,
-  getUsersWithPaginate,
-};
+export { postCreateNewUser, getAllUsers, putUpdateUser, deleteUser };

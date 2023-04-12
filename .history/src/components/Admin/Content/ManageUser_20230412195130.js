@@ -44,8 +44,9 @@ const ManageUser = (props) => {
   };
   const fetchListUserWithPaginate = async (page) => {
     let res = await getUsersWithPaginate(page, LIMIT_USER);
-    res.EC === 0 && setListUser(res.DT.users);
-    res.EC === 0 && setPageCount(res.DT.totalPages);
+    res.EC === 0 &&
+      setListUser(res.DT.users) &&
+      setPageCount(res.DT.totalPages);
   };
   return (
     <div className='manage-user-container'>

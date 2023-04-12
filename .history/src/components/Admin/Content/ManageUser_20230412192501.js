@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import { FcPlus } from "react-icons/fc";
-import {
-  getAllUsers,
-  getUsersWithPaginate,
-} from "../../../services/apiService";
+import { getAllUsers } from "../../../services/apiService";
 import "./ManageUser.scss";
 import ModalCreateUser from "./ModalCreateUser";
 import ModalUpdateUser from "./ModalUpdateUser";
@@ -20,7 +17,6 @@ const ManageUser = (props) => {
   const [listUser, setListUser] = useState([]);
   const [userUpdate, setUserUpdate] = useState({});
   const [userDelete, setUserDelete] = useState({});
-  const [pageCount, setPageCount] = useState(0);
   const [userView, setUserView] = useState({});
   const handleClickBtnUpdate = (user) => {
     setShowModalUpdateUser(true);
@@ -35,17 +31,15 @@ const ManageUser = (props) => {
     setUserDelete(user);
   };
   useEffect(() => {
-    // fetchListUser();
-    fetchListUserWithPaginate(1);
+    fetchListUser();
   }, []);
   const fetchListUser = async () => {
     let res = await getAllUsers();
     res.EC === 0 && setListUser(res.DT);
   };
   const fetchListUserWithPaginate = async (page) => {
-    let res = await getUsersWithPaginate(page, LIMIT_USER);
-    res.EC === 0 && setListUser(res.DT.users);
-    res.EC === 0 && setPageCount(res.DT.totalPages);
+    let res = await getAllUsers();
+    res.EC === 0 && setListUser(res.DT);
   };
   return (
     <div className='manage-user-container'>
@@ -74,8 +68,6 @@ const ManageUser = (props) => {
             handleClickBtnUpdate={handleClickBtnUpdate}
             handleClickBtnView={handleClickBtnView}
             handleClickBtnDelete={handleClickBtnDelete}
-            fetchListUserWithPaginate={fetchListUserWithPaginate}
-            pageCount={pageCount}
           />
         </div>
         <ModalCreateUser

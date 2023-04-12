@@ -26,7 +26,7 @@ const deleteUser = (idUser) => {
   //
 };
 const getUsersWithPaginate = (page, limit) => {
-  return axios.get(`v1/participant?page=${page}&limit=${limit}`);
+  return axios.delete("v1/participant");
   //
 };
 export {
