@@ -1,0 +1,48 @@
+.signup-container {
+  display: flex;
+  height: 100%;
+  .left-signup-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #131313;
+    width: 50%;
+    height: 100vh;
+    .title {
+      color: #ffffff;
+      font-family: apercu-pro;
+      font-size: 48px;
+      line-height: 44px;
+      margin: 0px 0px 35px;
+      text-align: center;
+    }
+    .footer {
+      color: #ffffff;
+      font-family: apercu-pro;
+      font-size: 24px;
+      line-height: 20px;
+      margin: 0px 0px 20px;
+    }
+  }
+  .right-signup-layout {
+    padding: 10px;
+    width: 50%;
+    .header {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 20px;
+      .text {
+      }
+      .btn-login {
+        color: #4c4c4c;
+        font-size: 14px;
+        line-height: 16.8px;
+        margin: 0px 20px;
+        border: 1px solid #ccc;
+        padding: 5px 3px 5px 3px;
+      }
+    }
+  }
+}

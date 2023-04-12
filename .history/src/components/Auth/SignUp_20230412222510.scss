@@ -1,0 +1,14 @@
+.signup-container {
+  display: flex;
+  height: 100%;
+
+  .left-signup-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #131313;
+  }
+  .right-signup-layout {
+  }
+}

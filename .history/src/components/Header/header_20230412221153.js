@@ -8,9 +8,6 @@ const Header = () => {
   const handleLogin = () => {
     navigate("/login");
   };
-  const handleSignUp = () => {
-    navigate("/SignUp");
-  };
   return (
     <Navbar bg='light' expand='lg'>
       <Container>
