@@ -7,7 +7,7 @@ import { putUpdateUser } from "../../../services/apiService";
 import _ from "lodash";
 
 const ModalUpdateUser = (props) => {
-  const { show, fetchListUser, userUpdate, setUserUpdate } = props;
+  const { show, fetchListUser, userUpdate } = props;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -33,7 +33,7 @@ const ModalUpdateUser = (props) => {
     setImage("");
     setRole("USER");
     setPreviewImage("");
-    setUserUpdate({});
+    userUpdate = {};
   };
   const handleSubmitCreateUser = async () => {
     //validate

@@ -33,7 +33,7 @@ const ModalUpdateUser = (props) => {
     setImage("");
     setRole("USER");
     setPreviewImage("");
-    setUserUpdate({});
+    userUpdate = {};
   };
   const handleSubmitCreateUser = async () => {
     //validate

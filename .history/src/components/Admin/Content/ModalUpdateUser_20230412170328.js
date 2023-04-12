@@ -7,7 +7,7 @@ import { putUpdateUser } from "../../../services/apiService";
 import _ from "lodash";
 
 const ModalUpdateUser = (props) => {
-  const { show, fetchListUser, userUpdate, setUserUpdate } = props;
+  const { show, fetchListUser, userUpdate } = props;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -24,6 +24,13 @@ const ModalUpdateUser = (props) => {
         setPreviewImage(`data:image/jpeg;base64,${userUpdate.image}`);
     }
   }, [userUpdate]);
+  const validateEmail = (email) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };
 
   const handleClose = () => {
     props.setShow(false);
@@ -33,21 +40,27 @@ const ModalUpdateUser = (props) => {
     setImage("");
     setRole("USER");
     setPreviewImage("");
-    setUserUpdate({});
   };
   const handleSubmitCreateUser = async () => {
     //validate
+    const isValidEmail = validateEmail(email);
+    if (!isValidEmail) {
+      toast.error("Invalid Email");
+    } else if (!password) {
+      toast.error("Invalid Password");
+    }
     //call api
-    let data = await putUpdateUser(userUpdate.id, password, role, image);
-    if (data && data.EC === 0) {
-      toast.success(data.EM);
-      await fetchListUser();
-      handleClose();
-    }
-    if (data && data.EC !== 0) {
-      toast.error(data.EM);
-      handleClose();
-    }
+
+    // let data = await postCreateNewUser(email, username, password, role, image);
+    // if (data && data.EC === 0) {
+    //   toast.success(data.EM);
+    //   await fetchListUser();
+    //   handleClose();
+    // }
+    // if (data && data.EC !== 0) {
+    //   toast.error(data.EM);
+    //   handleClose();
+    // }
   };
 
   const handleUpLoadFile = (e) => {
