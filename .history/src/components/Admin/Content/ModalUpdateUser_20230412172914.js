@@ -16,6 +16,10 @@ const ModalUpdateUser = (props) => {
   const [previewImage, setPreviewImage] = useState("");
   useEffect(() => {
     if (!_.isEmpty(userUpdate)) {
+      console.log(
+        "🚀 ~ file: ModalUpdateUser.js:19 ~ useEffect ~ userUpdate:",
+        userUpdate
+      );
       setEmail(userUpdate.email);
       setUsername(userUpdate.username);
       setRole(userUpdate.role);
@@ -38,7 +42,7 @@ const ModalUpdateUser = (props) => {
   const handleSubmitCreateUser = async () => {
     //validate
     //call api
-    let data = await putUpdateUser(userUpdate.id, username, role, image);
+    let data = await putUpdateUser(userUpdate.id, password, role, image);
     if (data && data.EC === 0) {
       toast.success(data.EM);
       await fetchListUser();

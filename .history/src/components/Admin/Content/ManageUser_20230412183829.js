@@ -26,7 +26,6 @@ const ManageUser = (props) => {
   };
   const handleClickBtnDelete = (user) => {
     setShowModalDeleteUser(true);
-    setUserDelte(user);
   };
   useEffect(() => {
     fetchListUser();

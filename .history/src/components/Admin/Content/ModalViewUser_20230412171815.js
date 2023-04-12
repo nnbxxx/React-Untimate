@@ -38,7 +38,7 @@ const ModalUpdateUser = (props) => {
   const handleSubmitCreateUser = async () => {
     //validate
     //call api
-    let data = await putUpdateUser(userUpdate.id, username, role, image);
+    let data = await putUpdateUser(userUpdate.id, password, role, image);
     if (data && data.EC === 0) {
       toast.success(data.EM);
       await fetchListUser();

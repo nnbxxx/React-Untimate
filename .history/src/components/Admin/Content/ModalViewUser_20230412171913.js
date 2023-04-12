@@ -3,7 +3,6 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { FcPlus } from "react-icons/fc";
 import { toast } from "react-toastify";
-import { putUpdateUser } from "../../../services/apiService";
 import _ from "lodash";
 
 const ModalUpdateUser = (props) => {
@@ -38,7 +37,7 @@ const ModalUpdateUser = (props) => {
   const handleSubmitCreateUser = async () => {
     //validate
     //call api
-    let data = await putUpdateUser(userUpdate.id, username, role, image);
+    let data = await putUpdateUser(userUpdate.id, password, role, image);
     if (data && data.EC === 0) {
       toast.success(data.EM);
       await fetchListUser();
