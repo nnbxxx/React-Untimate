@@ -23,7 +23,6 @@ const ModalCreateUser = (props) => {
 
   const handleClose = () => {
     props.setShow(false);
-    setUsername("");
     setEmail("");
     setPassword("");
     setImage("");
@@ -52,10 +51,6 @@ const ModalCreateUser = (props) => {
     );
     if (res.data && res.data.EC === 0) {
       toast.success(res.data.EM);
-      handleClose();
-    }
-    if (res.data && res.data.EC !== 0) {
-      toast.console.error(res.data.EM);
       handleClose();
     }
   };

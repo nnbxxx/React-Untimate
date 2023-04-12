@@ -54,10 +54,6 @@ const ModalCreateUser = (props) => {
       toast.success(res.data.EM);
       handleClose();
     }
-    if (res.data && res.data.EC !== 0) {
-      toast.console.error(res.data.EM);
-      handleClose();
-    }
   };
 
   const handleUpLoadFile = (e) => {

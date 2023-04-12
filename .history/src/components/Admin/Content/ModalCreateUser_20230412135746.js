@@ -3,7 +3,6 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { FcPlus } from "react-icons/fc";
 import axios from "axios";
-import { toast } from "react-toastify";
 const ModalCreateUser = (props) => {
   const { show } = props;
   const [email, setEmail] = useState("");
@@ -23,7 +22,6 @@ const ModalCreateUser = (props) => {
 
   const handleClose = () => {
     props.setShow(false);
-    setUsername("");
     setEmail("");
     setPassword("");
     setImage("");
@@ -34,9 +32,7 @@ const ModalCreateUser = (props) => {
     //validate
     const isValidEmail = validateEmail(email);
     if (!isValidEmail) {
-      toast.error("Invalid Email");
-    } else if (!password) {
-      toast.error("Invalid Password");
+      alert("invalid email");
     }
     //call api
     const data = new FormData();
@@ -50,14 +46,15 @@ const ModalCreateUser = (props) => {
       "http://localhost:8081/api/v1/participant",
       data
     );
-    if (res.data && res.data.EC === 0) {
-      toast.success(res.data.EM);
-      handleClose();
-    }
-    if (res.data && res.data.EC !== 0) {
-      toast.console.error(res.data.EM);
-      handleClose();
-    }
+    console.log(
+      "🚀 ~ file: ModalCreateUser.js:30 ~ handleSubmitCreateUser ~ res:",
+      res
+    );
+    setEmail("");
+    setPassword("");
+    setImage("");
+    setRole("USER");
+    setPreviewImage("");
   };
 
   const handleUpLoadFile = (e) => {
