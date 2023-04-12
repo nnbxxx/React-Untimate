@@ -59,11 +59,7 @@ const SideBar = ({ image, collapsed, toggled, handleToggleSidebar }) => {
           </Menu>
           <Menu iconShape='circle'>
             <SubMenu icon={<FaGem />} title={"Features"}>
-              <MenuItem>
-                {" "}
-                Quản lý User
-                <Link to='/admins/manage-users' />
-              </MenuItem>
+              <MenuItem> Quản lý User</MenuItem>
               <MenuItem> Quản lý bài Quiz</MenuItem>
               <MenuItem> Quản lý câu Hỏi</MenuItem>
             </SubMenu>

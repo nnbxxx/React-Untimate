@@ -17,7 +17,6 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
@@ -29,8 +28,8 @@ root.render(
           <Route path='users' element={<User />} />
         </Route>
         <Route path='/admins' element={<Admin />}>
-          <Route index element={<DashBoard />} />
           <Route path='manage-users' element={<ManageUser />} />
+          <Route path='manage-users' element={<DashBoard />} />
         </Route>
       </Routes>
     </BrowserRouter>
