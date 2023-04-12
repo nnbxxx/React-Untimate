@@ -5,9 +5,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { NavLink, useNavigate } from "react-router-dom";
 const Header = () => {
   const navigate = useNavigate();
-  const handleLogin = () => {
-    navigate("/login");
-  };
+  const handleLogin = () => {};
   return (
     <Navbar bg='light' expand='lg'>
       <Container>

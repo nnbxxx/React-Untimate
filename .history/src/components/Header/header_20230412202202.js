@@ -5,9 +5,6 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { NavLink, useNavigate } from "react-router-dom";
 const Header = () => {
   const navigate = useNavigate();
-  const handleLogin = () => {
-    navigate("/login");
-  };
   return (
     <Navbar bg='light' expand='lg'>
       <Container>
@@ -28,12 +25,7 @@ const Header = () => {
             </NavLink>
           </Nav>
           <Nav>
-            <button
-              className='btn-login'
-              onClick={() => {
-                handleLogin();
-              }}
-            >
+            <button className='btn-login' onClick={() => {}}>
               Log In
             </button>
             <button className='btn-signup'>Sign Up</button>

@@ -6,7 +6,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 const Header = () => {
   const navigate = useNavigate();
   const handleLogin = () => {
-    navigate("/login");
+    alert("me");
   };
   return (
     <Navbar bg='light' expand='lg'>

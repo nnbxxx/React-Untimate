@@ -19,7 +19,6 @@ const TableUserPaginate = (props) => {
 
   const handlePageClick = (event) => {
     props.fetchListUserWithPaginate(+event.selected + 1);
-    props.setCurrentPage(+event.selected + 1);
     console.log(`User requested page number ${event.selected}`);
   };
   return (
@@ -75,7 +74,7 @@ const TableUserPaginate = (props) => {
             })}
           {listUser && listUser.length === 0 && (
             <tr>
-              <td colSpan={5}>Not Found Data</td>
+              <td colSpan={4}>Not Found Data</td>
             </tr>
           )}
         </tbody>
