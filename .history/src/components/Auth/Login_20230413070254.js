@@ -18,12 +18,6 @@ const Login = (props) => {
   };
   const handleLogin = async () => {
     //validate
-    const isValidEmail = validateEmail(email);
-    if (!isValidEmail) {
-      toast.error("Invalid Email");
-    } else if (!password) {
-      toast.error("Invalid Password");
-    }
     //call api
     let data = await postLogin(email, password);
     if (data && data.EC === 0) {

@@ -103,7 +103,7 @@ const SignUp = () => {
           <div className='form-group form-password'>
             <label>Password</label>
             <input
-              type={isshowpassword ? "text" : "password"}
+              type={isshowpassword ? "text" : "text"}
               className='form-control'
               placeholder='Password'
               value={password}
@@ -114,10 +114,18 @@ const SignUp = () => {
             <span
               className='icon-eye'
               onClick={() => {
-                setIsshowpassword(!isshowpassword);
+                setIsshowpassword(true);
               }}
             >
-              {isshowpassword ? <VscEyeClosed /> : <VscEye />}
+              <VscEye />
+            </span>
+            <span
+              className='icon-eye'
+              onClick={() => {
+                setIsshowpassword(false);
+              }}
+            >
+              <VscEyeClosed />
             </span>
           </div>
           <div>

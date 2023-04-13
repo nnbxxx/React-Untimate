@@ -114,10 +114,10 @@ const SignUp = () => {
             <span
               className='icon-eye'
               onClick={() => {
-                setIsshowpassword(!isshowpassword);
+                setIsshowpassword(true);
               }}
             >
-              {isshowpassword ? <VscEyeClosed /> : <VscEye />}
+              {isshowpassword ? <VscEye /> : <VscEyeClosed />}
             </span>
           </div>
           <div>

@@ -11,8 +11,7 @@ const SignUp = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
-  const [isshowpassword, setIsshowpassword] = useState(false);
+
   const validateEmail = (email) => {
     return String(email)
       .toLowerCase()
@@ -103,7 +102,7 @@ const SignUp = () => {
           <div className='form-group form-password'>
             <label>Password</label>
             <input
-              type={isshowpassword ? "text" : "password"}
+              type='password'
               className='form-control'
               placeholder='Password'
               value={password}
@@ -111,13 +110,9 @@ const SignUp = () => {
                 setPassword(e.target.value);
               }}
             />
-            <span
-              className='icon-eye'
-              onClick={() => {
-                setIsshowpassword(!isshowpassword);
-              }}
-            >
-              {isshowpassword ? <VscEyeClosed /> : <VscEye />}
+            <span className='icon-eye'>
+              <VscEye />
+              <VscEyeClosed />
             </span>
           </div>
           <div>

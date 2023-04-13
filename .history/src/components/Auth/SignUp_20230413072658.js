@@ -117,7 +117,7 @@ const SignUp = () => {
                 setIsshowpassword(!isshowpassword);
               }}
             >
-              {isshowpassword ? <VscEyeClosed /> : <VscEye />}
+              {isshowpassword ? <VscEye /> : <VscEye />}
             </span>
           </div>
           <div>

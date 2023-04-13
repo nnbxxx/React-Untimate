@@ -18,7 +18,6 @@ const Login = (props) => {
   };
   const handleLogin = async () => {
     //validate
-    const isValidEmail = validateEmail(email);
     if (!isValidEmail) {
       toast.error("Invalid Email");
     } else if (!password) {

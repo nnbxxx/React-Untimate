@@ -1,7 +1,7 @@
 import "./SignUp.scss";
 import { SiWebflow } from "react-icons/si";
 import { Button } from "react-bootstrap";
-import { VscEye, VscEyeClosed } from "react-icons/vsc";
+import { BiShow } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { postRegister } from "../../services/apiService";
@@ -11,23 +11,8 @@ const SignUp = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
-  const [isshowpassword, setIsshowpassword] = useState(false);
-  const validateEmail = (email) => {
-    return String(email)
-      .toLowerCase()
-      .match(
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      );
-  };
   const handleSignUp = async () => {
     //validate
-    const isValidEmail = validateEmail(email);
-    if (!isValidEmail) {
-      toast.error("Invalid Email");
-    } else if (!password) {
-      toast.error("Invalid Password");
-    }
     //call api
     let data = await postRegister(email, password);
     if (data && data.EC === 0) {
@@ -89,21 +74,9 @@ const SignUp = () => {
             />
           </div>
           <div className='form-group'>
-            <label>UserName</label>
-            <input
-              type='text'
-              className='form-control'
-              placeholder='User Name'
-              value={username}
-              onChange={(e) => {
-                setUsername(e.target.value);
-              }}
-            />
-          </div>
-          <div className='form-group form-password'>
             <label>Password</label>
             <input
-              type={isshowpassword ? "text" : "password"}
+              type='password'
               className='form-control'
               placeholder='Password'
               value={password}
@@ -111,14 +84,6 @@ const SignUp = () => {
                 setPassword(e.target.value);
               }}
             />
-            <span
-              className='icon-eye'
-              onClick={() => {
-                setIsshowpassword(!isshowpassword);
-              }}
-            >
-              {isshowpassword ? <VscEyeClosed /> : <VscEye />}
-            </span>
           </div>
           <div>
             <Button
