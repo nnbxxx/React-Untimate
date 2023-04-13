@@ -26,14 +26,7 @@ const HomePage = () => {
             Doing Quiz Now
           </button>
         ) : (
-          <button
-            className='btn-3'
-            onClick={() => {
-              navigate("/login");
-            }}
-          >
-            Get's started. It's Free
-          </button>
+          <button className='btn-3'>Get's started. It's Free</button>
         )}
       </div>
     </div>

@@ -17,23 +17,11 @@ const HomePage = () => {
           one. Create a typeform instead—and make everyone happy.
         </div>
         {isAuthenticated ? (
-          <button
-            className='btn-3'
-            onClick={() => {
-              navigate("/users");
-            }}
-          >
+          <button className='btn-3' onClick={() => {}}>
             Doing Quiz Now
           </button>
         ) : (
-          <button
-            className='btn-3'
-            onClick={() => {
-              navigate("/login");
-            }}
-          >
-            Get's started. It's Free
-          </button>
+          <button className='btn-3'>Get's started. It's Free</button>
         )}
       </div>
     </div>

@@ -33,7 +33,7 @@ const Layout = (props) => {
           <Route index element={<HomePage />} />
           <Route path='users' element={<ListQuiz />} />
         </Route>
-        <Route path='/quiz/:id' element={<DetailQuiz />} />
+        <Route path='users/quiz/:id' element={<DetailQuiz />} />
 
         <Route path='/admins' element={<Admin />}>
           <Route index element={<DashBoard />} />

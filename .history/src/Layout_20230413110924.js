@@ -20,9 +20,7 @@ import ListQuiz from "./components/User/ListQuiz";
 import DetailQuiz from "./components/User/DetailQuiz";
 const NotFound = () => {
   return (
-    <h1 className='alert alert-danger container mt-3'>
-      404 Not found data Your current URL
-    </h1>
+    <h1 className='alert alert-danger'>404 Not found data Your current URL</h1>
   );
 };
 const Layout = (props) => {
