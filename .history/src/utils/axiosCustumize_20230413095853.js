@@ -17,7 +17,6 @@ instance.interceptors.request.use(
   },
   function (error) {
     // Do something with request error
-    NProgress.start();
 
     return Promise.reject(error);
   }

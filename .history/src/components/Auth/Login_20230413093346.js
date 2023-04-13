@@ -93,7 +93,7 @@ const Login = (props) => {
             }}
             disabled={isloading}
           >
-            {isloading === true && <ImSpinner10 className='loader-icon' />}
+            <ImSpinner10 className='loader-icon' />
             <span>Login to Webdevstudios</span>
           </Button>
         </div>

@@ -6,11 +6,10 @@ import { postLogin } from "../../services/apiService";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { doLogin } from "../../redux/action/userAction";
-import { ImSpinner10 } from "react-icons/im";
+import ImSpinner10 from "react-icons/Im";
 const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isloading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const validateEmail = (email) => {
@@ -29,18 +28,14 @@ const Login = (props) => {
       toast.error("Invalid Password");
     }
     //call api
-    setIsLoading(true);
     let data = await postLogin(email, password);
     if (data && data.EC === 0) {
       toast.success(data.EM);
       dispatch(doLogin(data));
-      setIsLoading(false);
-
       navigate("/");
     }
     if (data && data.EC !== 0) {
       toast.error(data.EM);
-      setIsLoading(false);
     }
   };
   return (
@@ -59,9 +54,9 @@ const Login = (props) => {
           </button>
         </span>
       </div>
-      <div className='title col-3 mx-auto'>Adventure Webdevstudios</div>
-      <div className='welcome col-3 mx-auto'>Hello, who’s this?</div>
-      <div className='content-form col-3 mx-auto'>
+      <div className='title col-2 mx-auto'>Adventure Webdevstudios</div>
+      <div className='welcome col-2 mx-auto'>Hello, who’s this?</div>
+      <div className='content-form col-2 mx-auto'>
         <div className='form-group'>
           <label>Email</label>
           <input
@@ -91,9 +86,8 @@ const Login = (props) => {
             onClick={(e) => {
               handleLogin();
             }}
-            disabled={isloading}
           >
-            {isloading === true && <ImSpinner10 className='loader-icon' />}
+            <ImSpinner10 />
             <span>Login to Webdevstudios</span>
           </Button>
         </div>

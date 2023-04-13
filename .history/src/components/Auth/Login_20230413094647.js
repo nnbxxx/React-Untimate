@@ -36,7 +36,7 @@ const Login = (props) => {
       dispatch(doLogin(data));
       setIsLoading(false);
 
-      navigate("/");
+      // navigate("/");
     }
     if (data && data.EC !== 0) {
       toast.error(data.EM);
@@ -93,7 +93,7 @@ const Login = (props) => {
             }}
             disabled={isloading}
           >
-            {isloading === true && <ImSpinner10 className='loader-icon' />}
+            {isloading && <ImSpinner10 className='loader-icon' />}
             <span>Login to Webdevstudios</span>
           </Button>
         </div>

@@ -34,13 +34,10 @@ const Login = (props) => {
     if (data && data.EC === 0) {
       toast.success(data.EM);
       dispatch(doLogin(data));
-      setIsLoading(false);
-
       navigate("/");
     }
     if (data && data.EC !== 0) {
       toast.error(data.EM);
-      setIsLoading(false);
     }
   };
   return (
@@ -93,7 +90,7 @@ const Login = (props) => {
             }}
             disabled={isloading}
           >
-            {isloading === true && <ImSpinner10 className='loader-icon' />}
+            <ImSpinner10 className='loader-icon' />
             <span>Login to Webdevstudios</span>
           </Button>
         </div>

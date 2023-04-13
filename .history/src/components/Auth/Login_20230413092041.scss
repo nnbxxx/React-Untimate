@@ -56,17 +56,12 @@
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      background-color: #262627;
+      background-color: #262627 !important;
       border-radius: 3px;
-      color: #ffffff;
+      color: #ffffff !important;
       line-height: 28px;
       text-align: center;
       outline: none;
-      &:disabled {
-        background-color: #ddd;
-        color: #afafaf;
-        cursor: no-drop !important;
-      }
     }
     .back {
       cursor: pointer;
@@ -74,10 +69,8 @@
         border: 1px solid #ccc;
       }
     }
-    .loader-icon {
-      margin-top: 7px;
+    .loaderIcon .spin.FaIcons {
       margin-right: 7px;
-      color: #2cccff;
       top: 2px;
       animation: spin 1s infinite linear;
     }

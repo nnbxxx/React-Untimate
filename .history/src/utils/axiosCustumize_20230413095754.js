@@ -17,7 +17,7 @@ instance.interceptors.request.use(
   },
   function (error) {
     // Do something with request error
-    NProgress.start();
+    NProgress.done();
 
     return Promise.reject(error);
   }
@@ -28,8 +28,6 @@ instance.interceptors.response.use(
   function (response) {
     // Any status code that lie within the range of 2xx cause this function to trigger
     // Do something with response data
-    NProgress.done();
-
     return response && response.data ? response.data : response;
   },
   function (error) {
