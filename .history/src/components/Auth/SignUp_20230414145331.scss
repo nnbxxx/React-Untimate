@@ -1,0 +1,110 @@
+.signup-container {
+  display: flex;
+  height: 100%;
+  .left-signup-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #131313;
+    width: 50%;
+    height: 100vh;
+    .title {
+      color: #ffffff;
+      font-family: apercu-pro;
+      font-size: 48px;
+      line-height: 44px;
+      margin: 0px 0px 35px;
+      text-align: center;
+    }
+    .footer {
+      color: #ffffff;
+      font-family: apercu-pro;
+      font-size: 24px;
+      line-height: 20px;
+      margin: 0px 0px 20px;
+    }
+  }
+  .right-signup-layout {
+    padding: 10px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-radius: 20px;
+    .header {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 50px;
+      .text {
+        color: #4c4c4c;
+        font-size: 14px;
+        line-height: 16.8px;
+        margin: 0px 8px 0px 0px;
+      }
+      .btn-login {
+        border-radius: 2px;
+        color: #4c4c4c;
+        font-family: apercu-pro;
+        font-size: 12px;
+        line-height: 14px;
+        padding: 8px 12px 6px;
+        border: 1px solid #ccc;
+        margin: 0 20px;
+      }
+    }
+    .title11 {
+      align-items: center;
+      color: #262627;
+      display: flex;
+      justify-content: center;
+      line-height: 19.2px;
+      font-size: 40px;
+    }
+    .welcome {
+      color: #737373;
+      font-size: 24px;
+      font-weight: 200;
+      line-height: 36px;
+      margin: 0px 0px 10px;
+      text-align: center;
+    }
+    .content-form {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 15px;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      padding: 25px;
+      border-radius: 10px;
+      .btn-submit {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #262627 !important;
+        border-radius: 3px;
+        color: #ffffff !important;
+        line-height: 28px;
+        text-align: center;
+        outline: none;
+      }
+      .form-password {
+        position: relative;
+        .icon-eye {
+          position: absolute;
+          right: 10px;
+          bottom: 10px;
+        }
+      }
+      .back {
+        cursor: pointer;
+        &:hover {
+          border: 1px solid #ccc;
+        }
+      }
+    }
+  }
+}

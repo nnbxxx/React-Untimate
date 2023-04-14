@@ -1,0 +1,19 @@
+.detail-quiz-container {
+  display: flex;
+  gap: 20px;
+  .left-content {
+    border: 1px solid #ff6651;
+    width: 70%;
+
+    .title {
+    }
+    .q-body {
+    }
+    .q-content {
+    }
+  }
+  .right-content {
+    border: 1px solid #2cccff;
+    width: 30%;
+  }
+}
