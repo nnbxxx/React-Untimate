@@ -4,10 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import { FcPlus } from "react-icons/fc";
 const ModalCreateUser = (props) => {
   const [show, setShow] = useState(props.showModalAddUser);
-  console.log(
-    "🚀 ~ file: ModalCreateUser.js:7 ~ ModalCreateUser ~ show:",
-    show
-  );
+  "🚀 ~ file: ModalCreateUser.js:7 ~ ModalCreateUser ~ show:", show;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");

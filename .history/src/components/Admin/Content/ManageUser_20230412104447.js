@@ -14,10 +14,8 @@ const ManageUser = (props) => {
             className='btn btn-primary'
             onClick={(e) => {
               setShowModalAddUser(!showModalAddUser);
-              console.log(
-                "🚀 ~ file: ManageUser.js:17 ~ ManageUser ~ showModalAddUser:",
-                showModalAddUser
-              );
+              "🚀 ~ file: ManageUser.js:17 ~ ManageUser ~ showModalAddUser:",
+                showModalAddUser;
             }}
           >
             <FcPlus />

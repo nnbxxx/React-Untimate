@@ -24,7 +24,7 @@ const Question = (props) => {
         {data.answers &&
           data.answers.length > 0 &&
           data.answers.map((item, index) => {
-            console.log("🚀 ~ file: Question.js:27 ~ Question ~ item:", item);
+            "🚀 ~ file: Question.js:27 ~ Question ~ item:", item;
             return (
               <div className='form-check a-child' key={`q-ans-cb-${index}`}>
                 <input

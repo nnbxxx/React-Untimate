@@ -26,7 +26,7 @@ const ManageQuiz = () => {
       return;
     }
     let res = await postCreateNewQuiz(description, name, type?.value, image);
-    console.log("🚀 ~ file: ManageQuiz.js:22 ~ handleSubmitQuiz ~ res:", res);
+    "🚀 ~ file: ManageQuiz.js:22 ~ handleSubmitQuiz ~ res:", res;
     if (res && res.EC === 0) {
       toast.success(res.EM);
       setName("");

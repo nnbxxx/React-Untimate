@@ -25,7 +25,7 @@ const PaginatedItems = ({ itemsPerPage }) => {
   useEffect(() => {
     // Fetch items from another resources.
     const endOffset = itemOffset + itemsPerPage;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+    (`Loading items from ${itemOffset} to ${endOffset}`);
     setCurrentItems(items.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(items.length / itemsPerPage));
   }, [itemOffset, itemsPerPage]);
@@ -43,7 +43,7 @@ const PaginatedItems = ({ itemsPerPage }) => {
 };
 const handlePageClick = (event) => {
   const newOffset = (event.selected * itemsPerPage) % items.length;
-  console.log(
+  (
     `User requested page number ${event.selected}, which is offset ${newOffset}`
   );
 const TableUserPaginate = (props) => {

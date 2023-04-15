@@ -16,9 +16,7 @@ const Items = ({ currentItems }) => {
 
 const handlePageClick = (event) => {
   const newOffset = (event.selected * itemsPerPage) % items.length;
-  console.log(
-    `User requested page number ${event.selected}, which is offset ${newOffset}`
-  );
+  `User requested page number ${event.selected}, which is offset ${newOffset}`;
 };
 const TableUserPaginate = (props) => {
   const { listUser } = props;

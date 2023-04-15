@@ -6,7 +6,7 @@ const DetailQuiz = (props) => {
   const quizId = params.id;
   const fetchQuestions = async () => {
     let res = await getDataQuiz(quizId);
-    console.log("🚀 ~ file: DetailQuiz.js:9 ~ fetchQuestions ~ res:", res);
+    "🚀 ~ file: DetailQuiz.js:9 ~ fetchQuestions ~ res:", res;
   };
   useEffect(() => {
     fetchQuestions();

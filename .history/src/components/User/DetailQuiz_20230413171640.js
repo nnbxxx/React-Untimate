@@ -7,7 +7,7 @@ const DetailQuiz = (props) => {
   const params = useParams();
   const quizId = params.id;
   const location = useLocation();
-  console.log("🚀 ~ file: DetailQuiz.js:10 ~ DetailQuiz ~ location:", location);
+  "🚀 ~ file: DetailQuiz.js:10 ~ DetailQuiz ~ location:", location;
   const fetchQuestions = async () => {
     let res = await getDataQuiz(quizId);
     if (res && res.EC === 0) {

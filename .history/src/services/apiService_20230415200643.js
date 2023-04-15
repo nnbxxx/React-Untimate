@@ -42,10 +42,7 @@ const postSubmitQuiz = (data) => {
   return axios.post(`v1/quiz-submit`, { ...data });
 };
 const postCreateNewQuiz = (description, name, difficulty, quizImage) => {
-  console.log(
-    "🚀 ~ file: apiService.js:45 ~ postCreateNewQuiz ~ quizImage:",
-    quizImage
-  );
+  "🚀 ~ file: apiService.js:45 ~ postCreateNewQuiz ~ quizImage:", quizImage;
 
   const data = new FormData();
   data.append("description", description);

@@ -3,10 +3,8 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 const ModalResult = (props) => {
   const { show, setShow, dataModalResult, setDataModalResult } = props;
-  console.log(
-    "🚀 ~ file: ModalResult.js:6 ~ ModalResult ~ dataModalResult:",
-    dataModalResult
-  );
+  "🚀 ~ file: ModalResult.js:6 ~ ModalResult ~ dataModalResult:",
+    dataModalResult;
   const handleClose = () => setShow(false);
   return (
     <>

@@ -14,7 +14,7 @@ const DetailQuiz = (props) => {
         .groupBy("id")
         .map((value, key) => ({ questionId: key, data: value }))
         .value();
-      console.log("🚀 ~ file: DetailQuiz.js:15 ~ fetchQuestions ~ data:", data);
+      "🚀 ~ file: DetailQuiz.js:15 ~ fetchQuestions ~ data:", data;
     }
   };
   useEffect(() => {

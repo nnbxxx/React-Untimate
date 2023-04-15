@@ -62,10 +62,7 @@ const DetailQuiz = (props) => {
     }
   };
   const handleSubmitQuiz = () => {
-    console.log(
-      "🚀 ~ file: DetailQuiz.js:43 ~ handleNext ~ dataquiz:",
-      dataquiz
-    );
+    "🚀 ~ file: DetailQuiz.js:43 ~ handleNext ~ dataquiz:", dataquiz;
     let payLoad = { quizId, answers: [] };
     if (dataquiz && dataquiz.length > 0) {
     }

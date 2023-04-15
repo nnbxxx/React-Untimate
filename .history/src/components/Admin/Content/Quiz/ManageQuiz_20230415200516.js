@@ -20,7 +20,7 @@ const ManageQuiz = () => {
   const handleSubmitQuiz = async (e) => {
     e.preventDefault();
     let res = await postCreateNewQuiz(description, name, type?.value, image);
-    console.log("🚀 ~ file: ManageQuiz.js:22 ~ handleSubmitQuiz ~ res:", res);
+    "🚀 ~ file: ManageQuiz.js:22 ~ handleSubmitQuiz ~ res:", res;
   };
   return (
     <div className='quiz-container'>

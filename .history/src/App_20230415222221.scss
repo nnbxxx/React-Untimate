@@ -1,0 +1,106 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // overflow: hidden;
+}
+.app-container {
+  .header-container {
+    .btn-login {
+      border-radius: 4px;
+      color: #262627;
+      justify-content: center;
+      line-height: 24px;
+      margin: 0px 16px 0px 0px;
+      padding: 8px 16px;
+      text-align: center;
+      border: 1px solid black;
+    }
+    .btn-signup {
+      border-radius: 4px;
+      color: #fff;
+      background-color: #262627;
+      justify-content: center;
+      line-height: 24px;
+      margin: 0px 16px 0px 0px;
+      padding: 8px 16px;
+      text-align: center;
+      border: 1px solid black;
+
+      &:hover {
+        // opacity: 0.9;
+        background-color: black;
+      }
+    }
+    .navbar {
+      z-index: 10;
+      padding-top: 25px;
+      background-color: rgba(0, 0, 0, 0) !important;
+      .nav-link {
+        &.active {
+          color: #00bfff;
+        }
+      }
+    }
+  }
+  .homepage-content {
+    margin-top: 40px;
+    padding: 0 100px;
+    position: relative;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    .title-1 {
+      color: #262627;
+      font-size: 60px;
+      font-weight: 300;
+      line-height: 76.8px;
+      margin: 0px 0px 24px;
+    }
+    .title-2 {
+      color: #262627;
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 31.2px;
+      margin: 0px 0px 40px;
+    }
+    .btn-3 {
+      background-color: #262627;
+      border-radius: 4px;
+      color: #fcfaf8;
+      display: inline-block;
+      justify-content: center;
+      line-height: 24px;
+      padding: 10px 20px;
+      text-align: center;
+      width: 200px;
+      border: none;
+
+      &:hover {
+        // opacity: 0.9;
+        background-color: black;
+      }
+    }
+  }
+}
+video {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+}
+@media (min-width: 1450px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1400px !important;
+  }
+}

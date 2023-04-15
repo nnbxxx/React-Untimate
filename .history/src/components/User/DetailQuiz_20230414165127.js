@@ -46,7 +46,7 @@ const DetailQuiz = (props) => {
   const handleCheckBox = (answerId, questionId) => {
     let dataquizClone = _.cloneDeep(dataquiz);
     let q = dataquizClone.find((item) => +item.questionId === +questionId);
-    console.log("🚀 ~ file: DetailQuiz.js:53 ~ handleCheckBox ~ q:", q);
+    "🚀 ~ file: DetailQuiz.js:53 ~ handleCheckBox ~ q:", q;
     if (q && q.answers) {
       let tmp = q.answers.map((item) => {
         if (+item.id === +answerId) item.isSelected = !item.isSelected;
@@ -58,11 +58,9 @@ const DetailQuiz = (props) => {
     let index = dataquizClone.findIndex(
       (item) => +item.questionId === +questionId
     );
-    console.log("🚀 ~ file: DetailQuiz.js:61 ~ handleCheckBox ~ index:", index);
-    console.log(
-      "🚀 ~ file: DetailQuiz.js:48 ~ handleCheckBox ~ dataquizClone:",
-      dataquizClone
-    );
+    "🚀 ~ file: DetailQuiz.js:61 ~ handleCheckBox ~ index:", index;
+    "🚀 ~ file: DetailQuiz.js:48 ~ handleCheckBox ~ dataquizClone:",
+      dataquizClone;
 
     if (index > -1) {
       dataquizClone[index] = q.answers;

@@ -47,10 +47,7 @@ const ManageUser = (props) => {
     res.EC === 0 &&
       setListUser(res.DT.users) &&
       setPageCount(res.DT.totalPages);
-    console.log(
-      "🚀 ~ file: ManageUser.js:24 ~ ManageUser ~ pageCount:",
-      pageCount
-    );
+    "🚀 ~ file: ManageUser.js:24 ~ ManageUser ~ pageCount:", pageCount;
   };
   return (
     <div className='manage-user-container'>

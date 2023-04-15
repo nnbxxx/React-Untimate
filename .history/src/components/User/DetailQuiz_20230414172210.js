@@ -57,14 +57,9 @@ const DetailQuiz = (props) => {
     let index = dataquizClone.findIndex(
       (item) => +item.questionId === +questionId
     );
-    console.log(
-      "🚀 ~ file: DetailQuiz.js:60 ~ handleCheckBox ~ dataquizClone:",
-      dataquizClone
-    );
-    console.log(
-      "🚀 ~ file: DetailQuiz.js:60 ~ handleCheckBox ~ dataquizClone:",
-      dataquiz
-    );
+    "🚀 ~ file: DetailQuiz.js:60 ~ handleCheckBox ~ dataquizClone:",
+      dataquizClone;
+    "🚀 ~ file: DetailQuiz.js:60 ~ handleCheckBox ~ dataquizClone:", dataquiz;
     // if (index > -1) {
     //   dataquizClone[index] = q.answers;
     //   setDataquiz(dataquizClone);

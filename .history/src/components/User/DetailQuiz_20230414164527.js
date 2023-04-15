@@ -49,11 +49,9 @@ const DetailQuiz = (props) => {
     if (q && q.answers) {
       let tmp = q.answers.map((item) => {
         if (+item.id === +answerId) item.isSelected = !item.isSelected;
-        console.log(
-          "🚀 ~ file: DetailQuiz.js:52 ~ tmp ~ item.isSelected:",
+        "🚀 ~ file: DetailQuiz.js:52 ~ tmp ~ item.isSelected:",
           item.isSelected,
-          !item.isSelected
-        );
+          !item.isSelected;
         return item;
       });
       q = tmp;
@@ -65,10 +63,7 @@ const DetailQuiz = (props) => {
       dataquizClone[index] = q.answers;
       setDataquiz(dataquizClone);
     }
-    console.log(
-      "🚀 ~ file: DetailQuiz.js:69 ~ handleCheckBox ~ Dataquiz:",
-      dataquiz
-    );
+    "🚀 ~ file: DetailQuiz.js:69 ~ handleCheckBox ~ Dataquiz:", dataquiz;
   };
   return (
     <div className='detail-quiz-container'>

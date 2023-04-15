@@ -35,7 +35,7 @@ const DetailQuiz = (props) => {
   useEffect(() => {
     fetchQuestions();
   }, []);
-  console.log("🚀 ~ file: DetailQuiz.js:12 ~ DetailQuiz ~ dataquiz:", dataquiz);
+  "🚀 ~ file: DetailQuiz.js:12 ~ DetailQuiz ~ dataquiz:", dataquiz;
 
   return (
     <div className='detail-quiz-container'>

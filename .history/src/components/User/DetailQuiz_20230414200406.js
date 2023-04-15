@@ -75,7 +75,7 @@ const DetailQuiz = (props) => {
     }
     let payLoad = { quizId: +quizId, answers };
     let res = await postSubmitQuiz(payLoad);
-    console.log("🚀 ~ file: DetailQuiz.js:78 ~ handleSubmitQuiz ~ res:", res);
+    "🚀 ~ file: DetailQuiz.js:78 ~ handleSubmitQuiz ~ res:", res;
   };
   return (
     <div className='detail-quiz-container'>

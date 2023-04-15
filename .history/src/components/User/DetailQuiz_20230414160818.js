@@ -47,7 +47,7 @@ const DetailQuiz = (props) => {
     let dataquizClone = _.cloneDeep(dataquiz);
     let q = dataquizClone.find((item) => +item.questionId === +questionId);
     if (q && q.answers) {
-      console.log(123);
+      123;
     }
   };
   return (

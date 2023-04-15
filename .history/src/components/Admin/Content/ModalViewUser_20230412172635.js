@@ -13,10 +13,7 @@ const ModalViewUser = (props) => {
   const [previewImage, setPreviewImage] = useState("");
   useEffect(() => {
     if (!_.isEmpty(userView)) {
-      console.log(
-        "🚀 ~ file: ModalViewUser.js:16 ~ useEffect ~ userView:",
-        userView
-      );
+      "🚀 ~ file: ModalViewUser.js:16 ~ useEffect ~ userView:", userView;
       setEmail(userView.email);
       setUsername(userView.username);
       setRole(userView.role);

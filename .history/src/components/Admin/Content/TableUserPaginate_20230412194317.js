@@ -16,13 +16,11 @@ const Items = ({ currentItems }) => {
 
 const TableUserPaginate = (props) => {
   const { listUser, pageCount } = props;
-  console.log(
-    "🚀 ~ file: TableUserPaginate.js:19 ~ TableUserPaginate ~ pageCount:",
-    pageCount
-  );
+  "🚀 ~ file: TableUserPaginate.js:19 ~ TableUserPaginate ~ pageCount:",
+    pageCount;
   const handlePageClick = (event) => {
     props.fetchListUserWithPaginate(+event.selected + 1);
-    console.log(`User requested page number ${event.selected}`);
+    `User requested page number ${event.selected}`;
   };
   return (
     <>

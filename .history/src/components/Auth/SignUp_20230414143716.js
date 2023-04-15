@@ -22,7 +22,7 @@ const SignUp = () => {
   };
   const handleSignUp = async () => {
     //validate
-    console.log(password, !password);
+    password, !password;
     const isValidEmail = validateEmail(email);
     if (!isValidEmail) {
       toast.error("Invalid Email");

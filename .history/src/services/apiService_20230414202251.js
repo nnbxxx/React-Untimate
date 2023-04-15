@@ -41,7 +41,7 @@ const getDataQuiz = (id) => {
 const postSubmitQuiz = (data) => {
   let obj = { quizId: null, answers: [] };
   obj.quizId = data.quizId;
-  console.log(data.answers);
+  data.answers;
   obj.answers = [
     data.answers[0],
     data.answers[1],

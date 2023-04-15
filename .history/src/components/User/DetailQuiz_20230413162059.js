@@ -10,12 +10,12 @@ const DetailQuiz = (props) => {
     let res = await getDataQuiz(quizId);
     if (res && res.EC === 0) {
       let raw = res.DT;
-      console.log("🚀 ~ file: DetailQuiz.js:13 ~ fetchQuestions ~ raw:", raw);
+      "🚀 ~ file: DetailQuiz.js:13 ~ fetchQuestions ~ raw:", raw;
       let data = _.chain(raw)
         .groupBy("id")
         .map((value, key) => ({ questionId: key, data: value }))
         .value();
-      console.log("🚀 ~ file: DetailQuiz.js:15 ~ fetchQuestions ~ data:", data);
+      "🚀 ~ file: DetailQuiz.js:15 ~ fetchQuestions ~ data:", data;
     }
   };
   useEffect(() => {

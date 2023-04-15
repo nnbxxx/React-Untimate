@@ -7,7 +7,7 @@ const TableUser = (props) => {
   });
   const fetchListUser = async () => {
     let res = await getAllUsers();
-    console.log("🚀 ~ file: TableUser.js:10 ~ fetchListUser ~ res:", res.DT);
+    "🚀 ~ file: TableUser.js:10 ~ fetchListUser ~ res:", res.DT;
   };
   return (
     <>

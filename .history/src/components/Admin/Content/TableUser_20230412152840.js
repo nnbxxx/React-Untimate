@@ -3,7 +3,7 @@ import { getAllUsers } from "../../../services/apiService";
 const TableUser = (props) => {
   const [listUser, setListUser] = useState([]);
   useEffect(() => {
-    console.log(123);
+    123;
   }, []);
   return (
     <>

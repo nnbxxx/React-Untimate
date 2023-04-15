@@ -2,7 +2,7 @@ import _ from "lodash";
 const Question = (props) => {
   const { data, index } = props;
   const handleCheckBox = (e) => {
-    console.log("🚀 ~ file: Question.js:4 ~ Question ~ data:", data);
+    "🚀 ~ file: Question.js:4 ~ Question ~ data:", data;
   };
   if (_.isEmpty(data)) {
     return <></>;

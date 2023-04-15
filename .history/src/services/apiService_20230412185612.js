@@ -22,7 +22,7 @@ const putUpdateUser = (id, username, role, image) => {
   return axios.put("v1/participant", data);
 };
 const deleteUser = (idUser) => {
-  console.log("🚀 ~ file: apiService.js:26 ~ deleteUser ~ idUser:", idUser);
+  "🚀 ~ file: apiService.js:26 ~ deleteUser ~ idUser:", idUser;
   return axios.delete("v1/participant", { id: idUser });
   //
 };

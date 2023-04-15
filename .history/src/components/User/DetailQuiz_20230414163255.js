@@ -47,9 +47,9 @@ const DetailQuiz = (props) => {
     let dataquizClone = _.cloneDeep(dataquiz);
     let q = dataquizClone.find((item) => +item.questionId === +questionId);
     if (q && q.answers) {
-      console.log(q.answers);
+      q.answers;
       // let tmp = q.answers.map((item) => {
-      //   console.log(item);
+      //   (item);
       //   if (+item.id === +answerId) item.id.isSelected = !item.id.isSelected;
       //   return item;
       // });

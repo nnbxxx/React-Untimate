@@ -41,7 +41,7 @@ const getDataQuiz = (id) => {
 const postSubmitQuiz = (data) => {
   let obj = { quizId: null, answers: [] };
   obj.quizId = data.quizId;
-  console.log(data.answers);
+  data.answers;
   obj.answers = [
     {
       questionId: 1,
@@ -52,7 +52,7 @@ const postSubmitQuiz = (data) => {
       userAnswerId: [],
     },
   ];
-  console.log(obj.answers);
+  obj.answers;
   return axios.post(`v1/quiz-submit`, obj);
 };
 export {

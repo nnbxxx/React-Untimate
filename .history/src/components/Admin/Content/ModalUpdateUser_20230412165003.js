@@ -16,10 +16,7 @@ const ModalUpdateUser = (props) => {
   const [previewImage, setPreviewImage] = useState("");
   useEffect(() => {
     if (!_.isEmpty(userUpdate)) {
-      console.log(
-        "🚀 ~ file: ModalUpdateUser.js:19 ~ useEffect ~ userUpdate:",
-        userUpdate
-      );
+      "🚀 ~ file: ModalUpdateUser.js:19 ~ useEffect ~ userUpdate:", userUpdate;
       setEmail(userUpdate.email);
       setUsername(userUpdate.username);
       setRole(userUpdate.role);

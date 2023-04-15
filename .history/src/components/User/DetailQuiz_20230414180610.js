@@ -71,10 +71,7 @@ const DetailQuiz = (props) => {
       });
     }
     let payLoad = { quizId: +quizId, answers };
-    console.log(
-      "🚀 ~ file: DetailQuiz.js:74 ~ handleSubmitQuiz ~ payLoad:",
-      payLoad
-    );
+    "🚀 ~ file: DetailQuiz.js:74 ~ handleSubmitQuiz ~ payLoad:", payLoad;
   };
   return (
     <div className='detail-quiz-container'>

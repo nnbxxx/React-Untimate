@@ -23,10 +23,7 @@ const ModalCreateUser = (props) => {
       role: role,
       userImage: image,
     };
-    console.log(
-      "🚀 ~ file: ModalCreateUser.js:26 ~ handleSubmitCreateUser ~ data:",
-      data
-    );
+    "🚀 ~ file: ModalCreateUser.js:26 ~ handleSubmitCreateUser ~ data:", data;
   };
 
   const handleUpLoadFile = (e) => {

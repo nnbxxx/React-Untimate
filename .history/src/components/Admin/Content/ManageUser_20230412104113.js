@@ -22,8 +22,8 @@ const ManageUser = (props) => {
         </div>
         <div className='table-user-container'>Table users</div>
         <ModalCreateUser showModalAddUser={showModalAddUser} />
-        console.log("🚀 ~ file: ManageUser.js:26 ~ ManageUser ~
-        showModalAddUser:", showModalAddUser)
+        ("🚀 ~ file: ManageUser.js:26 ~ ManageUser ~ showModalAddUser:",
+        showModalAddUser)
       </div>
     </div>
   );

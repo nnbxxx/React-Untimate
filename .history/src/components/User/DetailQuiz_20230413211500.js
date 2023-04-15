@@ -31,7 +31,7 @@ const DetailQuiz = (props) => {
         })
         .value();
       setDataquiz(data);
-      console.log("🚀 ~ file: DetailQuiz.js:18 ~ fetchQuestions ~ data:", data);
+      "🚀 ~ file: DetailQuiz.js:18 ~ fetchQuestions ~ data:", data;
     }
   };
   useEffect(() => {

@@ -8,14 +8,14 @@ const DetailQuiz = (props) => {
   const quizId = params.id;
   const fetchQuestions = async () => {
     let res = await getDataQuiz(quizId);
-    console.log("🚀 ~ file: DetailQuiz.js:9 ~ fetchQuestions ~ res:", res);
+    "🚀 ~ file: DetailQuiz.js:9 ~ fetchQuestions ~ res:", res;
     if (res && res.EC === 0) {
       let raw = res.DT;
       let data = _.chain(data)
         .groupBy("id")
         .map((value, key) => ({ questionId: key, data: value }))
         .value();
-      console.log("🚀 ~ file: DetailQuiz.js:15 ~ fetchQuestions ~ data:", data);
+      "🚀 ~ file: DetailQuiz.js:15 ~ fetchQuestions ~ data:", data;
     }
   };
   useEffect(() => {

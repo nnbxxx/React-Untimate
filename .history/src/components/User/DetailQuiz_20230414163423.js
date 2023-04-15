@@ -48,7 +48,7 @@ const DetailQuiz = (props) => {
     let q = dataquizClone.find((item) => +item.questionId === +questionId);
     if (q && q.answers) {
       let tmp = q.answers.map((item) => {
-        console.log(item, item.id.isSelected, !item.id.isSelected);
+        item, item.id.isSelected, !item.id.isSelected;
         // if (+item.id === +answerId) item.id.isSelected = !item.id.isSelected;
         return item;
       });

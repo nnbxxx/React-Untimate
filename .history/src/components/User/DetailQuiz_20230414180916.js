@@ -66,7 +66,7 @@ const DetailQuiz = (props) => {
     if (dataquiz && dataquiz.length > 0) {
       dataquiz.forEach((item) => {
         let questionId = item.questionId;
-        console.log("🚀 ~ file: DetailQuiz.js:69 ~ dataquiz.forEach ~ item:", item)
+        ("🚀 ~ file: DetailQuiz.js:69 ~ dataquiz.forEach ~ item:", item)
         let userAnswerID = [];
         // item.forEach((q) => {
         //   if (q.isSelected) userAnswerID.push(q.id);
@@ -75,7 +75,7 @@ const DetailQuiz = (props) => {
       };
     }
     let payLoad = { quizId: +quizId, answers };
-    console.log(
+    (
       "🚀 ~ file: DetailQuiz.js:74 ~ handleSubmitQuiz ~ payLoad:",
       payLoad
     );

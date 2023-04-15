@@ -27,10 +27,7 @@ const ModalCreateUser = (props) => {
       "http://localhost:8081/api/v1/participant",
       data
     );
-    console.log(
-      "🚀 ~ file: ModalCreateUser.js:30 ~ handleSubmitCreateUser ~ res:",
-      res
-    );
+    "🚀 ~ file: ModalCreateUser.js:30 ~ handleSubmitCreateUser ~ res:", res;
   };
 
   const handleUpLoadFile = (e) => {

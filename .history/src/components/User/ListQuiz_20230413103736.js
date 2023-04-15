@@ -8,7 +8,7 @@ const ListQuiz = (props) => {
   }, []);
   const getQuizData = async () => {
     const res = await getQuizByUser();
-    console.log("🚀 ~ file: ListQuiz.js:9 ~ getQuizData ~ res:", res);
+    "🚀 ~ file: ListQuiz.js:9 ~ getQuizData ~ res:", res;
   };
   return (
     <>

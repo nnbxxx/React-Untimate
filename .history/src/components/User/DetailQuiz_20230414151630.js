@@ -38,11 +38,9 @@ const DetailQuiz = (props) => {
   }, []);
   const handleNext = () => {
     if (dataquiz && dataquiz.length >= index + 1) setIndex(index + 1);
-    console.log(
-      "🚀 ~ file: DetailQuiz.js:42 ~ handleNext ~ dataquiz.length:",
+    "🚀 ~ file: DetailQuiz.js:42 ~ handleNext ~ dataquiz.length:",
       dataquiz.length,
-      index + 1
-    );
+      index + 1;
   };
   const handlePrev = () => {
     setIndex(index - 1);

@@ -49,10 +49,7 @@ const DetailQuiz = (props) => {
     if (q && q.answers) {
       let tmp = q.answers.map((item) => {
         // if (+item.id === +answerId) item.isSelected = !item.isSelected;
-        console.log(
-          "🚀 ~ file: DetailQuiz.js:52 ~ tmp ~ item.isSelected:",
-          item.isSelected
-        );
+        "🚀 ~ file: DetailQuiz.js:52 ~ tmp ~ item.isSelected:", item.isSelected;
         return item;
       });
       q = tmp;

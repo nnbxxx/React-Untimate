@@ -7,10 +7,8 @@ import { postCreateNewUser } from "../../../services/apiService";
 const ModalUpdateUser = (props) => {
   const { show, fetchListUser } = props;
   const [email, setEmail] = useState(props.userUpdate.email);
-  console.log(
-    "🚀 ~ file: ModalUpdateUser.js:11 ~ ModalUpdateUser ~ props.userUpdate:",
-    props.userUpdate
-  );
+  "🚀 ~ file: ModalUpdateUser.js:11 ~ ModalUpdateUser ~ props.userUpdate:",
+    props.userUpdate;
   const [password, setPassword] = useState(props.userUpdate.password);
   const [username, setUsername] = useState(props.userUpdate.username);
   const [image, setImage] = useState("");

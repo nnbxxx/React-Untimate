@@ -24,7 +24,7 @@ const SignUp = () => {
     //validate
 
     const isValidEmail = validateEmail(email);
-    console.log(password, !password);
+    password, !password;
     if (!isValidEmail) {
       toast.error("Invalid Email");
     } else if (!password) {
