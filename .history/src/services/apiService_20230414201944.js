@@ -39,6 +39,7 @@ const getDataQuiz = (id) => {
   return axios.get(`v1/questions-by-quiz?quizId=${id}`);
 };
 const postSubmitQuiz = (data) => {
+  let obj = { quizId };
   return axios.post(`v1/quiz-submit`, { ...data });
 };
 export {

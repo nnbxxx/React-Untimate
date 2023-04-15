@@ -80,11 +80,12 @@ const DetailQuiz = (props) => {
     }
     let payLoad = { quizId: +quizId, answers };
     let res = await postSubmitQuiz(payLoad);
+    console.log("🚀 ~ file: DetailQuiz.js:78 ~ handleSubmitQuiz ~ res:", res);
     if (res && res.EC === 0) {
       setDataModalResult({
-        countCorrect: res.DT.countCorrect,
-        countTotal: res.DT.countTotal,
-        quizData: res.DT.quizData,
+        countCorrect: res.countCorrect,
+        countTotal: res.countTotal,
+        quizData: res.quizData,
       });
       setIsShowModalResult(true);
     } else {

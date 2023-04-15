@@ -1,20 +1,15 @@
 import { useEffect, useState } from "react";
 import { useParams, useLocation } from "react-router-dom";
-import { getDataQuiz, postSubmitQuiz } from "../../services/apiService";
+import { getDataQuiz } from "../../services/apiService";
 import _ from "lodash";
 import "./DetailQuiz.scss";
 import Question from "./Question";
-import { toast } from "react-toastify";
-import ModalResult from "./ModalResult";
-
 const DetailQuiz = (props) => {
   const params = useParams();
   const quizId = params.id;
   const location = useLocation();
   const [dataquiz, setDataquiz] = useState([]);
   const [index, setIndex] = useState(0);
-  const [dataModalResult, setDataModalResult] = useState({});
-  const [isShowModalResult, setIsShowModalResult] = useState(false);
   const fetchQuestions = async () => {
     let res = await getDataQuiz(quizId);
     if (res && res.EC === 0) {
@@ -66,30 +61,23 @@ const DetailQuiz = (props) => {
       setDataquiz(dataquizClone);
     }
   };
-  const handleSubmitQuiz = async () => {
+  const handleSubmitQuiz = () => {
     let answers = [];
     if (dataquiz && dataquiz.length > 0) {
       dataquiz.forEach((item) => {
         let questionId = item.questionId;
-        let userAnswerId = [];
-        item.answers.forEach((q) => {
-          if (q.isSelected) userAnswerId.push(q.id);
+        let userAnswerID = [];
+        item.forEach((item) => {
+          if (item.isSelected) userAnswerID.push();
         });
-        answers.push({ questionId: +questionId, userAnswerId });
+        answers.push({ questionId: +questionId, userAnswerID });
       });
     }
     let payLoad = { quizId: +quizId, answers };
-    let res = await postSubmitQuiz(payLoad);
-    if (res && res.EC === 0) {
-      setDataModalResult({
-        countCorrect: res.DT.countCorrect,
-        countTotal: res.DT.countTotal,
-        quizData: res.DT.quizData,
-      });
-      setIsShowModalResult(true);
-    } else {
-      toast.error(res.EM);
-    }
+    console.log(
+      "🚀 ~ file: DetailQuiz.js:74 ~ handleSubmitQuiz ~ payLoad:",
+      payLoad
+    );
   };
   return (
     <div className='detail-quiz-container'>
@@ -135,13 +123,7 @@ const DetailQuiz = (props) => {
           </button>
         </div>
       </div>
-      <div className='right-content'>countdown</div>
-      <ModalResult
-        show={isShowModalResult}
-        setShow={setIsShowModalResult}
-        dataModalResult={dataModalResult}
-        setDataModalResult={setDataModalResult}
-      />
+      <div className='right-content'></div>
     </div>
   );
 };

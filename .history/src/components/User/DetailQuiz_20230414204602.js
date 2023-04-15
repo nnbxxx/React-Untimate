@@ -80,12 +80,8 @@ const DetailQuiz = (props) => {
     }
     let payLoad = { quizId: +quizId, answers };
     let res = await postSubmitQuiz(payLoad);
+    console.log("🚀 ~ file: DetailQuiz.js:78 ~ handleSubmitQuiz ~ res:", res);
     if (res && res.EC === 0) {
-      setDataModalResult({
-        countCorrect: res.DT.countCorrect,
-        countTotal: res.DT.countTotal,
-        quizData: res.DT.quizData,
-      });
       setIsShowModalResult(true);
     } else {
       toast.error(res.EM);

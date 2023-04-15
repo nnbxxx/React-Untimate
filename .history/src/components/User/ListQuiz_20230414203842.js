@@ -6,6 +6,7 @@ import _ from "lodash";
 const ListQuiz = (props) => {
   const [arrQuiz, setArrQuiz] = useState([]);
   const navigate = useNavigate();
+  const [isShowModalResult, setisShowModalResult] = useState(false);
   useEffect(() => {
     getQuizData();
   }, []);

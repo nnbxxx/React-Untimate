@@ -39,7 +39,22 @@ const getDataQuiz = (id) => {
   return axios.get(`v1/questions-by-quiz?quizId=${id}`);
 };
 const postSubmitQuiz = (data) => {
-  return axios.post(`v1/quiz-submit`, { ...data });
+  console.log("🚀 ~ file: apiService.js:42 ~ postSubmitQuiz ~ data:", {
+    ...data,
+  });
+  return axios.post(`v1/quiz-submit`, {
+    quizId: 1,
+    answers: [
+      {
+        questionId: 1,
+        userAnswerId: [3],
+      },
+      {
+        questionId: 2,
+        userAnswerId: [6],
+      },
+    ],
+  });
 };
 export {
   postCreateNewUser,

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import _ from "lodash";
 const ListQuiz = (props) => {
   const [arrQuiz, setArrQuiz] = useState([]);
+  const [isShowModalResult, setisShowModalResult] = useState(false);
   const navigate = useNavigate();
   useEffect(() => {
     getQuizData();

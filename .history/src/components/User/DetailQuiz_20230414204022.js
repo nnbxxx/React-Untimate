@@ -5,7 +5,6 @@ import _ from "lodash";
 import "./DetailQuiz.scss";
 import Question from "./Question";
 import { toast } from "react-toastify";
-import ModalResult from "./ModalResult";
 
 const DetailQuiz = (props) => {
   const params = useParams();
@@ -13,8 +12,7 @@ const DetailQuiz = (props) => {
   const location = useLocation();
   const [dataquiz, setDataquiz] = useState([]);
   const [index, setIndex] = useState(0);
-  const [dataModalResult, setDataModalResult] = useState({});
-  const [isShowModalResult, setIsShowModalResult] = useState(false);
+  const [isShowModalResult, setisShowModalResult] = useState(false);
   const fetchQuestions = async () => {
     let res = await getDataQuiz(quizId);
     if (res && res.EC === 0) {
@@ -80,13 +78,8 @@ const DetailQuiz = (props) => {
     }
     let payLoad = { quizId: +quizId, answers };
     let res = await postSubmitQuiz(payLoad);
+    console.log("🚀 ~ file: DetailQuiz.js:78 ~ handleSubmitQuiz ~ res:", res);
     if (res && res.EC === 0) {
-      setDataModalResult({
-        countCorrect: res.DT.countCorrect,
-        countTotal: res.DT.countTotal,
-        quizData: res.DT.quizData,
-      });
-      setIsShowModalResult(true);
     } else {
       toast.error(res.EM);
     }
@@ -136,12 +129,6 @@ const DetailQuiz = (props) => {
         </div>
       </div>
       <div className='right-content'>countdown</div>
-      <ModalResult
-        show={isShowModalResult}
-        setShow={setIsShowModalResult}
-        dataModalResult={dataModalResult}
-        setDataModalResult={setDataModalResult}
-      />
     </div>
   );
 };

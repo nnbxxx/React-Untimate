@@ -3,6 +3,8 @@ import { getQuizByUser } from "../../services/apiService";
 import "./ListQuiz.scss";
 import { useNavigate } from "react-router-dom";
 import _ from "lodash";
+import { toast } from "react-toastify";
+
 const ListQuiz = (props) => {
   const [arrQuiz, setArrQuiz] = useState([]);
   const navigate = useNavigate();

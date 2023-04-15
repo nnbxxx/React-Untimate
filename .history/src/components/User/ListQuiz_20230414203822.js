@@ -3,6 +3,7 @@ import { getQuizByUser } from "../../services/apiService";
 import "./ListQuiz.scss";
 import { useNavigate } from "react-router-dom";
 import _ from "lodash";
+const [isShowModalResult, setisShowModalResult] = useState(false);
 const ListQuiz = (props) => {
   const [arrQuiz, setArrQuiz] = useState([]);
   const navigate = useNavigate();
