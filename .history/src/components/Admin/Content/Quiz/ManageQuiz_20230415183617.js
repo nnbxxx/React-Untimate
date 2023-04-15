@@ -1,0 +1,3 @@
+const ManageQuiz = () => {
+  return <></>;
+};

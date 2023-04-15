@@ -6,7 +6,7 @@ const postCreateNewUser = (email, username, password, role, image) => {
   data.append("username", username);
   data.append("password", password);
   data.append("role", role);
-  data.append("quizImage", image);
+  data.append("userImage", image);
   return axios.post("v1/participant", data);
 };
 const getAllUsers = () => {
@@ -41,13 +41,13 @@ const getDataQuiz = (id) => {
 const postSubmitQuiz = (data) => {
   return axios.post(`v1/quiz-submit`, { ...data });
 };
-const postCreateNewQuiz = (description, name, difficulty, quizImage) => {
+const postCreateNewQuiz = () => {
   const data = new FormData();
-  data.append("description", description);
-  data.append("name", name);
-  data.append("difficulty", difficulty);
-  data.append("quizImage", quizImage);
-  return axios.post("v1/quiz", data);
+  data.append("id", id);
+  data.append("username", username);
+  data.append("role", role);
+  data.append("userImage", image);
+  return axios.put("v1/participant", data);
 };
 export {
   postCreateNewUser,

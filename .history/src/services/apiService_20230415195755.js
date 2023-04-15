@@ -47,7 +47,7 @@ const postCreateNewQuiz = (description, name, difficulty, quizImage) => {
   data.append("name", name);
   data.append("difficulty", difficulty);
   data.append("quizImage", quizImage);
-  return axios.post("v1/quiz", data);
+  return axios.put("v1/participant", data);
 };
 export {
   postCreateNewUser,

@@ -21,9 +21,8 @@ import sidebarBg from "../../assets/bg2.jpg";
 import { DiReact } from "react-icons/di";
 import { MdDashboard } from "react-icons/md";
 import { SiWebflow } from "react-icons/si";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 const SideBar = ({ image, collapsed, toggled, handleToggleSidebar }) => {
-  const navigate = useNavigate();
   return (
     <>
       <ProSidebar
@@ -44,14 +43,11 @@ const SideBar = ({ image, collapsed, toggled, handleToggleSidebar }) => {
               overflow: "hidden",
               textOverflow: "ellipsis",
               whiteSpace: "nowrap",
-              cursor: "pointer",
-            }}
-            onClick={() => {
-              navigate("/");
             }}
           >
             <DiReact size={"3rem"} color={"00bfff"} />
             <span>Webdevstudios</span>
+            <Link to='/ />
           </div>
         </SidebarHeader>
 

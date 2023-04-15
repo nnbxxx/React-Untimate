@@ -44,7 +44,6 @@ const SideBar = ({ image, collapsed, toggled, handleToggleSidebar }) => {
               overflow: "hidden",
               textOverflow: "ellipsis",
               whiteSpace: "nowrap",
-              cursor: "pointer",
             }}
             onClick={() => {
               navigate("/");

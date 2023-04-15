@@ -44,10 +44,6 @@ const SideBar = ({ image, collapsed, toggled, handleToggleSidebar }) => {
               overflow: "hidden",
               textOverflow: "ellipsis",
               whiteSpace: "nowrap",
-              cursor: "pointer",
-            }}
-            onClick={() => {
-              navigate("/");
             }}
           >
             <DiReact size={"3rem"} color={"00bfff"} />
