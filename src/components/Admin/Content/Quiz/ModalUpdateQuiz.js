@@ -3,45 +3,56 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { FcPlus } from "react-icons/fc";
 import { toast } from "react-toastify";
-import { putUpdateUser } from "../../../services/apiService";
 import _ from "lodash";
+import { putUpdateQuiz } from "../../../../services/apiService";
 
-const ModalUpdateUser = (props) => {
-  const { show, fetchListUser, userUpdate, setUserUpdate } = props;
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
+const ModalUpdateQuiz = (props) => {
+  const { show, setShow, fetchQuiz, quizData, setQuizData } = props;
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [difficulty, setDifficulty] = useState("");
   const [image, setImage] = useState("");
-  const [role, setRole] = useState("");
   const [previewImage, setPreviewImage] = useState("");
   useEffect(() => {
-    if (!_.isEmpty(userUpdate)) {
-      setEmail(userUpdate.email);
-      setUsername(userUpdate.username);
-      setRole(userUpdate.role);
+    if (!_.isEmpty(quizData)) {
+      setName(quizData.name);
+      setDescription(quizData.description);
+      setDifficulty(quizData.difficulty);
       setImage("");
-      userUpdate.image &&
-        setPreviewImage(`data:image/jpeg;base64,${userUpdate.image}`);
+      quizData.image &&
+        setPreviewImage(`data:image/jpeg;base64,${quizData.image}`);
     }
-  }, [userUpdate]);
+  }, [quizData]);
 
   const handleClose = () => {
-    props.setShow(false);
-    setUsername("");
-    setEmail("");
-    setPassword("");
+    setShow(false);
+    setName("");
+    setDescription("");
+    setDifficulty("");
     setImage("");
-    setRole("USER");
     setPreviewImage("");
-    setUserUpdate({});
+    setQuizData({});
   };
-  const handleSubmitCreateUser = async () => {
+
+  const handleSubmitUpdateQuiz = async () => {
     //validate
+    if (!name || !description || !image) {
+      toast.error("Name/ Description/ Image is required");
+      handleClose();
+      return;
+    }
     //call api
-    let data = await putUpdateUser(userUpdate.id, username, role, image);
+
+    let data = await putUpdateQuiz(
+      quizData.id,
+      description,
+      name,
+      difficulty,
+      image
+    );
     if (data && data.EC === 0) {
       toast.success(data.EM);
-      await props.fetchListUserWithPaginate(props.currentPage);
+      await fetchQuiz();
       handleClose();
     }
     if (data && data.EC !== 0) {
@@ -58,10 +69,6 @@ const ModalUpdateUser = (props) => {
   };
   return (
     <>
-      {/* <Button variant='primary' onClick={handleShow}>
-        Add new user
-      </Button> */}
-
       <Modal
         show={show}
         onHide={handleClose}
@@ -70,57 +77,45 @@ const ModalUpdateUser = (props) => {
         className='modal-add-user'
       >
         <Modal.Header closeButton>
-          <Modal.Title>Update User</Modal.Title>
+          <Modal.Title>Update Quizz</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <form className='row g-3'>
             <div className='col-md-6'>
-              <label className='form-label'> Email</label>
-              <input
-                type='email'
-                className='form-control'
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-                disabled
-              />
-            </div>
-            <div className='col-6'>
-              <label className='form-label'> UserName</label>
+              <label className='form-label'> Name: </label>
               <input
                 type='text'
                 className='form-control'
-                value={username}
+                value={name}
                 onChange={(e) => {
-                  setUsername(e.target.value);
+                  setName(e.target.value);
                 }}
               />
             </div>
-            <div className='col-md-6'>
-              <label className='form-label'> Password</label>
+            <div className='col-6'>
+              <label className='form-label'> Description</label>
               <input
-                type='password'
+                type='text'
                 className='form-control'
-                value={password}
+                value={description}
                 onChange={(e) => {
-                  setPassword(e.target.value);
+                  setDescription(e.target.value);
                 }}
-                disabled
               />
             </div>
 
             <div className='col-md-6'>
-              <label className='form-label'> Role</label>
+              <label className='form-label'> Type </label>
               <select
                 className='form-select'
                 onChange={(e) => {
-                  setRole(e.target.value);
+                  setDifficulty(e.target.value);
                 }}
-                value={role}
+                value={difficulty}
               >
-                <option value={"USER"}>USER</option>
-                <option value={"ADMIN"}>ADMIN</option>
+                <option value={"EASY"}>EASY</option>
+                <option value={"MEDIUM"}>MEDIUM</option>
+                <option value={"HARD"}>HARD</option>
               </select>
             </div>
             <div className='col-md-12'>
@@ -155,7 +150,7 @@ const ModalUpdateUser = (props) => {
           <Button
             variant='primary'
             onClick={() => {
-              handleSubmitCreateUser();
+              handleSubmitUpdateQuiz();
             }}
           >
             Save
@@ -165,4 +160,4 @@ const ModalUpdateUser = (props) => {
     </>
   );
 };
-export default ModalUpdateUser;
+export default ModalUpdateQuiz;

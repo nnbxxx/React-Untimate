@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import { getAllQuizForAdmin } from "../../../../services/apiService";
 import { toast } from "react-toastify";
 import ModalDeleteQuiz from "./ModalDeleteQuiz";
+import ModalUpdateQuiz from "./ModalUpdateQuiz";
 const TableQuiz = (props) => {
   const [listQuiz, setListQuiz] = useState([]);
   const [quizOption, setQuizOption] = useState({});
   const [isShowModalDelete, setIsShowModalDelete] = useState(false);
+  const [isShowModalUpdate, setIsShowModalUpdate] = useState(false);
   useEffect(() => {
     fetchQuiz();
   }, []);
@@ -42,7 +44,15 @@ const TableQuiz = (props) => {
                   <td>{item.description}</td>
                   <td>{item.difficulty}</td>
                   <td style={{ display: "flex", gap: "15px" }}>
-                    <button className='btn btn-warning'>Edit</button>
+                    <button
+                      className='btn btn-warning'
+                      onClick={() => {
+                        setIsShowModalUpdate(true);
+                        setQuizOption(item);
+                      }}
+                    >
+                      Edit
+                    </button>
                     <button
                       className='btn btn-danger'
                       onClick={() => {
@@ -59,10 +69,18 @@ const TableQuiz = (props) => {
         </tbody>
       </table>
       <ModalDeleteQuiz
-        isShowModalDelete={isShowModalDelete}
-        setIsShowModalDelete={setIsShowModalDelete}
-        quizDelete={quizOption}
+        show={isShowModalDelete}
+        setShow={setIsShowModalDelete}
+        quizData={quizOption}
+        fetchQuiz={fetchQuiz}
       />
+      <ModalUpdateQuiz
+        show={isShowModalUpdate}
+        setShow={setIsShowModalUpdate}
+        quizData={quizOption}
+        setQuizData={setQuizOption}
+        fetchQuiz={fetchQuiz}
+      ></ModalUpdateQuiz>
     </>
   );
 };
