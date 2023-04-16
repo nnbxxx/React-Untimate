@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Select from "react-select";
 import "./Questions.scss";
 import _ from "lodash";
@@ -6,23 +6,46 @@ import { BsFillPatchPlusFill, BsFillPatchMinusFill } from "react-icons/bs";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
 import { RiImageAddFill } from "react-icons/ri";
 import { v4 as uuidv4 } from "uuid";
+import Lightbox from "react-awesome-lightbox";
+import {
+  getAllQuizForAdmin,
+  postCreateNewAnswerForQuiz,
+  postCreateNewQuestionForQuiz,
+} from "../../../../services/apiService";
+import { toast } from "react-toastify";
 const Questions = () => {
-  const options = [
-    { value: "chocolate", label: "Chocolate" },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" },
-  ];
-  const [selectedQuiz, setSelectedQuiz] = useState({});
   const [questions, setQuestions] = useState([
     {
       id: uuidv4(),
       description: "",
       imageFile: "",
       imageName: "",
-      anwers: [{ id: uuidv4(), description: "", isCorrect: false }],
+      answers: [{ id: uuidv4(), description: "", isCorrect: false }],
     },
   ]);
+  const [previewImage, setPreviewImage] = useState(false);
+  const [dataPreviewImage, setDataPreviewImage] = useState({
+    title: "",
+    url: "",
+  });
+  const [listQuiz, setListQuiz] = useState([]);
+  const [selectedQuiz, setSelectedQuiz] = useState({});
 
+  useEffect(() => {
+    fetchQuiz();
+  }, []);
+  const fetchQuiz = async () => {
+    let res = await getAllQuizForAdmin();
+    if (res && res.EC === 0) {
+      let newListQuiz = res.DT.map((item) => {
+        return { value: item.id, label: `${item.id}-${item.description}` };
+      });
+      setListQuiz(newListQuiz);
+      // toast.success(res.EM);
+    } else {
+      toast.error(res.EM);
+    }
+  };
   const handAddRemoveQuestion = (type, id) => {
     if (type) {
       const newQuestion = {
@@ -30,7 +53,7 @@ const Questions = () => {
         description: "",
         imageFile: "",
         imageName: "",
-        anwers: [{ id: uuidv4(), description: "", isCorrect: false }],
+        answers: [{ id: uuidv4(), description: "", isCorrect: false }],
       };
       setQuestions([...questions, newQuestion]);
     }
@@ -47,14 +70,14 @@ const Questions = () => {
       let index = questionsClone.findIndex((item) => {
         return item.id === questionId;
       });
-      questionsClone[index].anwers.push(newAnswer);
+      questionsClone[index].answers.push(newAnswer);
       setQuestions(questionsClone);
     }
     if (!type) {
       let index = questionsClone.findIndex((item) => {
         return item.id === questionId;
       });
-      questionsClone[index].anwers = questionsClone[index].anwers.filter(
+      questionsClone[index].answers = questionsClone[index].answers.filter(
         (item) => item.id !== answerId
       );
       setQuestions(questionsClone);
@@ -88,7 +111,7 @@ const Questions = () => {
       return item.id === questionId;
     });
     if (index > -1) {
-      questionsClone[index].anwers = questionsClone[index].anwers.map(
+      questionsClone[index].answers = questionsClone[index].answers.map(
         (answer) => {
           if (answer.id === answerId) {
             if (type === "CHECKBOX") answer.isCorrect = value;
@@ -101,8 +124,30 @@ const Questions = () => {
 
     setQuestions(questionsClone);
   };
-  const handleSubmitQuestionForQuiz = () => {
-    alert("me");
+  const handleSubmitQuestionForQuiz = async () => {
+    // alert("me");
+    //submit questions
+
+    let resQuestions = await Promise.all(
+      questions.map(async (question) => {
+        const q = await postCreateNewQuestionForQuiz(
+          +selectedQuiz.value,
+          question.description,
+          question.imageFile
+        );
+        await Promise.all(
+          question.answers.map(async (answer) => {
+            await postCreateNewAnswerForQuiz(
+              q.DT.id,
+              answer.description,
+              answer.isCorrect
+            );
+          })
+        );
+      })
+    );
+
+    //submit answers
   };
   return (
     <div className='questions-container'>
@@ -114,7 +159,7 @@ const Questions = () => {
           <Select
             defaultValue={selectedQuiz}
             onChange={setSelectedQuiz}
-            options={options}
+            options={listQuiz}
           />
         </div>
         <span className='mt-3 mb-2'>Add Questions: </span>
@@ -149,9 +194,22 @@ const Questions = () => {
                       }}
                     />
                     <span>
-                      {question.imageName
-                        ? question.imageName
-                        : `0 file is uploaded`}
+                      {question.imageName ? (
+                        <span
+                          style={{ cursor: "pointer" }}
+                          onClick={() => {
+                            setPreviewImage(true);
+                            setDataPreviewImage({
+                              title: question.imageName,
+                              url: question.imageFile,
+                            });
+                          }}
+                        >
+                          {question.imageName}
+                        </span>
+                      ) : (
+                        `0 file is uploaded`
+                      )}
                     </span>
                   </div>
                   <div className='btn-add'>
@@ -173,9 +231,9 @@ const Questions = () => {
                     )}
                   </div>
                 </div>
-                {question.anwers &&
-                  question.anwers.length > 0 &&
-                  question.anwers.map((answer, index) => {
+                {question.answers &&
+                  question.answers.length > 0 &&
+                  question.answers.map((answer, index) => {
                     return (
                       <div key={answer.id} className='mt-3 answers-content'>
                         <input
@@ -216,7 +274,7 @@ const Questions = () => {
                           >
                             <AiOutlinePlusCircle className='icon-add' />
                           </span>
-                          {question.anwers.length > 1 && (
+                          {question.answers.length > 1 && (
                             <span
                               onClick={() => {
                                 handAddRemoveAnswer(
@@ -249,6 +307,15 @@ const Questions = () => {
             Save Change
           </button>
         </div>
+      )}
+      {previewImage && (
+        <Lightbox
+          image={URL.createObjectURL(dataPreviewImage.url)}
+          title={dataPreviewImage.title}
+          onClose={() => {
+            setPreviewImage(false);
+          }}
+        ></Lightbox>
       )}
     </div>
   );

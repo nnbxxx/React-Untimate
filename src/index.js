@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import "react-awesome-lightbox/build/style.css";
 import "nprogress/nprogress.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
