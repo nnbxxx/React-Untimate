@@ -14,7 +14,7 @@ import {
 } from "../../../../services/apiService";
 import { toast } from "react-toastify";
 const Questions = () => {
-  const [questions, setQuestions] = useState([
+  const initQuestion = [
     {
       id: uuidv4(),
       description: "",
@@ -22,7 +22,8 @@ const Questions = () => {
       imageName: "",
       answers: [{ id: uuidv4(), description: "", isCorrect: false }],
     },
-  ]);
+  ];
+  const [questions, setQuestions] = useState(initQuestion);
   const [previewImage, setPreviewImage] = useState(false);
   const [dataPreviewImage, setDataPreviewImage] = useState({
     title: "",
@@ -106,7 +107,6 @@ const Questions = () => {
   };
   const handleOnChangeAnswer = (type, answerId, questionId, value) => {
     let questionsClone = _.cloneDeep(questions);
-
     let index = questionsClone.findIndex((item) => {
       return item.id === questionId;
     });
@@ -125,29 +125,49 @@ const Questions = () => {
     setQuestions(questionsClone);
   };
   const handleSubmitQuestionForQuiz = async () => {
-    // alert("me");
+    if (_.isEmpty(selectedQuiz)) {
+      toast.error("Please Choose a Quiz");
+      return;
+    }
+    for (let i = 0; i < questions.length; i++) {
+      const question = questions[i];
+      if (!question.description) {
+        toast.error(`Question ${i + 1}: Please Fill Description`);
+        return;
+      }
+      let correctAnswer = 0;
+      for (let j = 0; j < question.answers.length; j++) {
+        const answer = question.answers[j];
+        correctAnswer += answer.isCorrect;
+        if (!answer.description) {
+          toast.error(
+            `Question ${i + 1}: Answer ${j + 1} Please Fill Description `
+          );
+          return;
+        }
+      }
+      if (correctAnswer === 0) {
+        toast.error(`Question ${i + 1}: Please Select Correct Answer`);
+      }
+    }
+
     //submit questions
-
-    let resQuestions = await Promise.all(
-      questions.map(async (question) => {
-        const q = await postCreateNewQuestionForQuiz(
-          +selectedQuiz.value,
-          question.description,
-          question.imageFile
+    for (const question of questions) {
+      const q = await postCreateNewQuestionForQuiz(
+        +selectedQuiz.value,
+        question.description,
+        question.imageFile
+      );
+      for (const answer of question.answers) {
+        await postCreateNewAnswerForQuiz(
+          q.DT.id,
+          answer.description,
+          answer.isCorrect
         );
-        await Promise.all(
-          question.answers.map(async (answer) => {
-            await postCreateNewAnswerForQuiz(
-              q.DT.id,
-              answer.description,
-              answer.isCorrect
-            );
-          })
-        );
-      })
-    );
-
-    //submit answers
+      }
+    }
+    setQuestions(initQuestion);
+    toast.success("Create Questions and Answers Success");
   };
   return (
     <div className='questions-container'>
