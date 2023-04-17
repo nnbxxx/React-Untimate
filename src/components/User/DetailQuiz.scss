@@ -53,5 +53,35 @@
     width: 30%;
     border-radius: 5px;
     padding: 20px;
+
+    .main-timer {
+      border: 1px solid #eee;
+      padding-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 600;
+      padding-top: 10px;
+      font-size: 25px;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+    .main-question {
+      display: flex;
+      gap: 15px;
+      font-size: 15px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+      padding: 15px;
+      // margin: 0 auto;
+      .question {
+        padding: 3px 10px;
+        border: 1px solid #ff6651;
+        border-radius: 100rem;
+        cursor: pointer;
+        &:hover {
+          color: #6a5af9;
+        }
+      }
+    }
   }
 }

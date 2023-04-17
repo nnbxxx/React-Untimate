@@ -2,6 +2,7 @@ import { Button } from "react-bootstrap";
 import "./App.scss";
 import Header from "./components/Header/header";
 import { Outlet } from "react-router-dom";
+import PerfectScrollbar from "react-perfect-scrollbar";
 
 const App = () => {
   return (
@@ -13,7 +14,9 @@ const App = () => {
         <div className='sidenav-container'></div>
       </div>
       <div className='app-content'>
-        <Outlet />
+        <PerfectScrollbar>
+          <Outlet />
+        </PerfectScrollbar>
       </div>
     </div>
   );

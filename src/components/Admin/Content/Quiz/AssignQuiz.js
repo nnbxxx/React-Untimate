@@ -3,6 +3,7 @@ import Select from "react-select";
 import {
   getAllQuizForAdmin,
   getAllUsers,
+  postAssignQuiz,
 } from "../../../../services/apiService";
 import { toast } from "react-toastify";
 
@@ -42,6 +43,14 @@ const AssignQuiz = (props) => {
       toast.error(res.EM);
     }
   };
+  const handleAssign = async () => {
+    let res = await postAssignQuiz(selectedQuiz.value, selectedUser.value);
+    if (res && res.EC === 0) {
+      toast.success(res.EM);
+    } else {
+      toast.error(res.EM);
+    }
+  };
   return (
     <div className='assign-quiz-container row'>
       <div className='col-6 form-group'>
@@ -61,7 +70,14 @@ const AssignQuiz = (props) => {
         />
       </div>
       <div>
-        <button className='btn btn-primary mt-3'>Assign</button>
+        <button
+          className='btn btn-primary mt-3'
+          onClick={() => {
+            handleAssign();
+          }}
+        >
+          Assign
+        </button>
       </div>
     </div>
   );

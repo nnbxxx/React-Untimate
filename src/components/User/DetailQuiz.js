@@ -6,6 +6,7 @@ import "./DetailQuiz.scss";
 import Question from "./Question";
 import { toast } from "react-toastify";
 import ModalResult from "./ModalResult";
+import RightContent from "../Admin/Content/Quiz/RightContent/RightContent";
 
 const DetailQuiz = (props) => {
   const params = useParams();
@@ -135,7 +136,9 @@ const DetailQuiz = (props) => {
           </button>
         </div>
       </div>
-      <div className='right-content'>countdown</div>
+      <div className='right-content'>
+        <RightContent dataquiz={dataquiz} />
+      </div>
       <ModalResult
         show={isShowModalResult}
         setShow={setIsShowModalResult}
