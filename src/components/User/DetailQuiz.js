@@ -137,7 +137,11 @@ const DetailQuiz = (props) => {
         </div>
       </div>
       <div className='right-content'>
-        <RightContent dataquiz={dataquiz} handleSubmitQuiz={handleSubmitQuiz} />
+        <RightContent
+          dataquiz={dataquiz}
+          handleSubmitQuiz={handleSubmitQuiz}
+          setIndex={setIndex}
+        />
       </div>
       <ModalResult
         show={isShowModalResult}
