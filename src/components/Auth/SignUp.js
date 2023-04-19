@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { postRegister } from "../../services/apiService";
 import { toast } from "react-toastify";
+import Language from "../Header/language";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -57,18 +58,17 @@ const SignUp = () => {
       </div>
       <div className='right-signup-layout'>
         <div className='header'>
-          <span className='text'>
-            Don't have an account yet?
-            <button
-              className='btn-login'
-              onClick={() => {
-                navigate("/login");
-              }}
-            >
-              {" "}
-              Login
-            </button>
-          </span>
+          <span className='text'>Don't have an account yet?</span>
+          <button
+            className='btn-login'
+            onClick={() => {
+              navigate("/login");
+            }}
+          >
+            {" "}
+            Login
+          </button>
+          <Language />
         </div>
         <div className=' col-6 mx-auto'>
           <span className='title11'>Webdevstudios</span>

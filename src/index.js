@@ -10,6 +10,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import Layout from "./Layout";
 import { persistor, store } from "./redux/store";
 import reportWebVitals from "./reportWebVitals";
+import i18n from "./utils/i18";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
